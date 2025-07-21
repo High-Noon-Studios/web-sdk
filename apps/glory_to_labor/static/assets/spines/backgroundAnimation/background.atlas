@@ -1,0 +1,13 @@
+background.png
+size:1669,1668
+filter:Linear,Linear
+pma:true
+Background@0.5x
+bounds:1127,706,960,540
+rotate:90
+Kremlin@0.5x
+bounds:2,2,1247,539
+Starburst@0.5x
+bounds:2,543,1123,1123
+USSR Flag@0.5x
+bounds:1251,162,207,542

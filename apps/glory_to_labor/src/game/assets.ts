@@ -13,91 +13,11 @@ export default {
 		src: new URL('../../assets/sprites/pressToContinueText/MM_pressanywhere.json', import.meta.url).href,
 		preload: true,
 	},
-	H1: {
-		type: 'spine',
-		src: {
-			atlas: new URL('../../assets/spines/symbols/symbols.atlas', import.meta.url).href,
-			skeleton: new URL('../../assets/spines/symbols/h1.json', import.meta.url).href,
-			scale: 2,
-		},
-	},
-	H2: {
-		type: 'spine',
-		src: {
-			atlas: new URL('../../assets/spines/symbols/symbols.atlas', import.meta.url).href,
-			skeleton: new URL('../../assets/spines/symbols/h2.json', import.meta.url).href,
-			scale: 2,
-		},
-	},
-	H3: {
-		type: 'spine',
-		src: {
-			atlas: new URL('../../assets/spines/symbols/symbols.atlas', import.meta.url).href,
-			skeleton: new URL('../../assets/spines/symbols/h3.json', import.meta.url).href,
-			scale: 2,
-		},
-	},
-	H4: {
-		type: 'spine',
-		src: {
-			atlas: new URL('../../assets/spines/symbols/symbols.atlas', import.meta.url).href,
-			skeleton: new URL('../../assets/spines/symbols/h4.json', import.meta.url).href,
-			scale: 2,
-		},
-	},
-	H5: {
-		type: 'spine',
-		src: {
-			atlas: new URL('../../assets/spines/symbols/symbols.atlas', import.meta.url).href,
-			skeleton: new URL('../../assets/spines/symbols/h5.json', import.meta.url).href,
-			scale: 2,
-		},
-	},
-	L1: {
-		type: 'spine',
-		src: {
-			atlas: new URL('../../assets/spines/symbols/symbols.atlas', import.meta.url).href,
-			skeleton: new URL('../../assets/spines/symbols/l1.json', import.meta.url).href,
-			scale: 2,
-		},
-	},
-	L2: {
-		type: 'spine',
-		src: {
-			atlas: new URL('../../assets/spines/symbols/symbols.atlas', import.meta.url).href,
-			skeleton: new URL('../../assets/spines/symbols/l2.json', import.meta.url).href,
-			scale: 2,
-		},
-	},
-	L3: {
-		type: 'spine',
-		src: {
-			atlas: new URL('../../assets/spines/symbols/symbols.atlas', import.meta.url).href,
-			skeleton: new URL('../../assets/spines/symbols/l3.json', import.meta.url).href,
-			scale: 2,
-		},
-	},
-	L4: {
-		type: 'spine',
-		src: {
-			atlas: new URL('../../assets/spines/symbols/symbols.atlas', import.meta.url).href,
-			skeleton: new URL('../../assets/spines/symbols/l4.json', import.meta.url).href,
-			scale: 2,
-		},
-	},
 	M: {
 		type: 'spine',
 		src: {
 			atlas: new URL('../../assets/spines/symbols2/symbols2.atlas', import.meta.url).href,
 			skeleton: new URL('../../assets/spines/symbols2/M.json', import.meta.url).href,
-			scale: 2,
-		},
-	},
-	S: {
-		type: 'spine',
-		src: {
-			atlas: new URL('../../assets/spines/symbols2/symbols2.atlas', import.meta.url).href,
-			skeleton: new URL('../../assets/spines/symbols2/S.json', import.meta.url).href,
 			scale: 2,
 		},
 	},
@@ -118,8 +38,8 @@ export default {
 		},
 	},
 	reelsFrame: {
-		type: 'sprites',
-		src: new URL('../../assets/sprites/reelsFrame/reels_frame.json', import.meta.url).href,
+		type: 'sprite',
+		src: new URL('../../assets/sprites/reelsFrame/reelsFrame.png', import.meta.url).href,
 	},
 	payFrame: {
 		type: 'sprite',
@@ -188,6 +108,15 @@ export default {
 			skeleton: new URL('../../assets/spines/fsIntro/fs_total_number.json', import.meta.url).href,
 			scale: 2,
 		},
+	},
+	backgroundAnimation: {
+		type: 'spine',
+		src: {
+			atlas: new URL('../../assets/spines/backgroundAnimation/background.atlas', import.meta.url).href,
+			skeleton: new URL('../../assets/spines/backgroundAnimation/background.json', import.meta.url).href,
+			scale: 4.5,
+		},
+		preload: true,
 	},
 	foregroundAnimation: {
 		type: 'spine',
@@ -271,6 +200,33 @@ export default {
 	sound: {
 		type: 'audio',
 		src: new URL('../../assets/audio/sounds.json', import.meta.url).href,
+		preload: true,
+	},
+	vignette: {
+		type: 'spine',
+		src: {
+			atlas: new URL('../../assets/spines/vignette/vignette.atlas', import.meta.url).href,
+			skeleton: new URL('../../assets/spines/vignette/vignette.json', import.meta.url).href,
+			scale: 1,
+		},
+		preload: true,
+	},
+	scatter: {
+		type: 'spine',
+		src: {
+			atlas: new URL('../../assets/spines/scatter/scatter.atlas', import.meta.url).href,
+			skeleton: new URL('../../assets/spines/scatter/scatter.json', import.meta.url).href,
+			scale: 1,
+		},
+	},
+	grunge: {
+		type: 'sprite',
+		src: new URL('../../assets/sprites/grunge/grunge.png', import.meta.url).href,
+		preload: true
+	},
+	banner: {
+		type: 'sprite',
+		src: new URL('../../assets/sprites/banner/banner.png', import.meta.url).href,
 		preload: true,
 	},
 } as const;

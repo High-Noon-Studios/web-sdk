@@ -1,0 +1,17 @@
+scatter.png
+size:1095,913
+filter:Linear,Linear
+pma:true
+ScatterBadge@4x
+bounds:2,645,266,268
+rotate:90
+ScatterEmblem@4x
+bounds:537,2,534,515
+ScatterRifle@4x
+bounds:272,520,391,418
+rotate:90
+ScatterStar@4x
+bounds:2,10,533,508
+ScatterSword@4x
+bounds:692,519,401,392
+offsets:0,1,401,393

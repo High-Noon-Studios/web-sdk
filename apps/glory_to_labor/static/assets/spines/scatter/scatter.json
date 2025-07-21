@@ -1,0 +1,129 @@
+{
+"skeleton": {
+	"hash": "jD8JbpCT+T4",
+	"spine": "4.1.24",
+	"x": -265.96,
+	"y": -287.63,
+	"width": 534,
+	"height": 561.5,
+	"images": "../PNG/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root", "y": -18.7 },
+	{ "name": "ScatterBadge", "parent": "root", "x": 1.04, "y": -7.27 },
+	{ "name": "ScatterSword", "parent": "root", "x": -28.96, "y": 38.57 },
+	{ "name": "ScatterStar", "parent": "root", "x": 1.04, "y": 38.57 },
+	{ "name": "ScatterRifle", "parent": "root", "x": 31.04, "y": 38.57 },
+	{ "name": "ScatterEmblem", "parent": "root", "x": 1.04, "y": -11.43 }
+],
+"slots": [
+	{ "name": "ScatterEmblem", "bone": "ScatterEmblem", "attachment": "ScatterEmblem@4x" },
+	{ "name": "ScatterRifle", "bone": "ScatterRifle", "attachment": "ScatterRifle@4x" },
+	{ "name": "ScatterSword", "bone": "ScatterSword", "attachment": "ScatterSword@4x" },
+	{ "name": "ScatterStar", "bone": "ScatterStar", "attachment": "ScatterStar@4x" },
+	{ "name": "ScatterBadge", "bone": "ScatterBadge", "attachment": "ScatterBadge@4x" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"ScatterBadge": {
+				"ScatterBadge@4x": { "y": 13.51, "width": 266, "height": 268 }
+			},
+			"ScatterEmblem": {
+				"ScatterEmblem@4x": { "width": 534, "height": 515 }
+			},
+			"ScatterRifle": {
+				"ScatterRifle@4x": { "width": 391, "height": 418 }
+			},
+			"ScatterStar": {
+				"ScatterStar@4x": { "width": 533, "height": 508 }
+			},
+			"ScatterSword": {
+				"ScatterSword@4x": { "width": 401, "height": 393 }
+			}
+		}
+	}
+],
+"animations": {
+	"idle": {},
+	"land": {
+		"bones": {
+			"ScatterSword": {
+				"rotate": [
+					{
+						"curve": [ 0.111, 0, 0.056, -18.78 ]
+					},
+					{
+						"time": 0.3333,
+						"value": -20,
+						"curve": [ 0.416, 20.55, 0.777, 0 ]
+					},
+					{ "time": 0.9984 }
+				]
+			},
+			"ScatterRifle": {
+				"rotate": [
+					{
+						"value": -0.03,
+						"curve": [ 0.111, -0.03, 0.051, 18.71 ]
+					},
+					{
+						"time": 0.3333,
+						"value": 20,
+						"curve": [ 0.416, -20.14, 0.777, -0.03 ]
+					},
+					{ "time": 0.9984, "value": -0.03 }
+				]
+			},
+			"ScatterStar": {
+				"scale": [
+					{
+						"curve": [ 0.111, 1, 0.223, 0.739, 0.111, 1, 0.223, 0.735 ]
+					},
+					{
+						"time": 0.3333,
+						"x": 0.85,
+						"y": 0.85,
+						"curve": [ 0.347, 1.013, 0.556, 1, 0.348, 1.017, 0.556, 1 ]
+					},
+					{ "time": 0.6667 }
+				]
+			},
+			"ScatterBadge": {
+				"scale": [
+					{
+						"curve": [ 0.111, 1, 0.265, 0.91, 0.111, 1, 0.266, 0.906 ]
+					},
+					{
+						"time": 0.3333,
+						"curve": [ 0.37, 1.179, 0.667, 1.4, 0.37, 1.17, 0.667, 1.4 ]
+					},
+					{
+						"time": 0.8333,
+						"x": 1.4,
+						"y": 1.4,
+						"curve": [ 0.948, 1.348, 0.946, 1, 0.949, 1.348, 0.946, 1 ]
+					},
+					{ "time": 1.0016 }
+				]
+			},
+			"ScatterEmblem": {
+				"scale": [
+					{
+						"curve": [ 0.111, 1, 0.222, 0.85, 0.111, 1, 0.222, 0.85 ]
+					},
+					{
+						"time": 0.3333,
+						"x": 0.85,
+						"y": 0.85,
+						"curve": [ 0.367, 1.033, 0.778, 1, 0.367, 1.033, 0.778, 1 ]
+					},
+					{ "time": 1 }
+				]
+			}
+		}
+	}
+}
+}

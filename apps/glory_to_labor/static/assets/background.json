@@ -1,0 +1,109 @@
+{
+"skeleton": {
+	"hash": "2RjPHhYPxVU",
+	"spine": "4.1.24",
+	"x": -623.5,
+	"y": -643.2,
+	"width": 1247,
+	"height": 1205.2,
+	"images": "../PNG/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "USSR Flag", "parent": "root", "length": 286, "rotation": -95.82, "x": -363.39, "y": -311.44 },
+	{ "name": "Starburst", "parent": "root" },
+	{ "name": "Background", "parent": "root" },
+	{ "name": "Kremlin", "parent": "root", "y": -373.7 }
+],
+"slots": [
+	{ "name": "Background", "bone": "Background", "attachment": "Background@0.5x" },
+	{ "name": "Starburst", "bone": "Starburst", "attachment": "Starburst@0.5x" },
+	{ "name": "Kremlin", "bone": "Kremlin", "attachment": "Kremlin@0.5x" },
+	{ "name": "USSR Flag", "bone": "USSR Flag", "attachment": "USSR Flag@0.5x" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"Background": {
+				"Background@0.5x": { "width": 960, "height": 540 }
+			},
+			"Kremlin": {
+				"Kremlin@0.5x": { "width": 1247, "height": 539 }
+			},
+			"Starburst": {
+				"Starburst@0.5x": { "x": 0.5, "y": 0.5, "width": 1123, "height": 1123 }
+			},
+			"USSR Flag": {
+				"USSR Flag@0.5x": { "x": -0.05, "y": 0.5, "rotation": 95.82, "width": 207, "height": 542 }
+			}
+		}
+	}
+],
+"animations": {
+	"enter": {
+		"bones": {
+			"Kremlin": {
+				"translate": [
+					{
+						"x": 31.26,
+						"y": 15.18,
+						"curve": [ 0.444, 31.26, 0.889, 31.26, 0.444, 15.18, 0.889, 200.97 ]
+					},
+					{ "time": 1.3333, "x": 31.26, "y": 200.97 }
+				],
+				"scale": [
+					{
+						"x": 0.9,
+						"y": 0.9,
+						"curve": [ 0.556, 0.9, 1.111, 1, 0.556, 0.9, 1.111, 1 ]
+					},
+					{ "time": 1.6667 }
+				]
+			},
+			"Starburst": {
+				"rotate": [
+					{
+						"value": 30.31,
+						"curve": [ 0.667, 30.31, 1.333, 0 ]
+					},
+					{ "time": 2 }
+				],
+				"scale": [
+					{
+						"x": 1.1,
+						"y": 1.1,
+						"curve": [ 0.667, 1.1, 1.333, 1, 0.667, 1.1, 1.333, 1 ]
+					},
+					{ "time": 2 }
+				]
+			},
+			"USSR Flag": {
+				"translate": [
+					{
+						"x": 528.92,
+						"y": -765.15,
+						"curve": [ 0.556, 528.92, 1.111, 475.63, 0.556, -765.15, 0.973, -307.63 ]
+					},
+					{ "time": 1.6667, "x": 475.63, "y": -337.18 }
+				],
+				"scale": [
+					{
+						"x": 0.9,
+						"y": 0.9,
+						"curve": [ 0.322, 0.9, 0.644, 1.188, 0.322, 0.9, 0.644, 1.188 ]
+					},
+					{
+						"time": 0.9667,
+						"x": 1.212,
+						"y": 1.212,
+						"curve": [ 1.311, 1.238, 1.656, 1, 1.311, 1.238, 1.656, 1 ]
+					},
+					{ "time": 2 }
+				]
+			}
+		}
+	}
+}
+}

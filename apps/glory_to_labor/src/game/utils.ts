@@ -1,13 +1,13 @@
-import _ from 'lodash';
-import { stateBet } from 'state-shared';
-import { createPlayBookUtils } from 'utils-book';
-import { createGetEmptyPaddedBoard } from 'utils-slots';
-
-import { SYMBOL_SIZE, REEL_PADDING, SYMBOL_INFO_MAP, BOARD_DIMENSIONS } from './constants';
-import { eventEmitter } from './eventEmitter';
+import { BOARD_DIMENSIONS, REEL_PADDING, SYMBOL_INFO_MAP, SYMBOL_SIZE } from './constants';
 import type { Bet, BookEventOfType } from './typesBookEvent';
-import { bookEventHandlerMap } from './bookEventHandlerMap';
 import type { RawSymbol, SymbolState } from './types';
+
+import _ from 'lodash';
+import { bookEventHandlerMap } from './bookEventHandlerMap';
+import { createGetEmptyPaddedBoard } from 'utils-slots';
+import { createPlayBookUtils } from 'utils-book';
+import { eventEmitter } from './eventEmitter';
+import { stateBet } from 'state-shared';
 
 // general utils
 export const { getEmptyBoard } = createGetEmptyPaddedBoard({ reelsDimensions: BOARD_DIMENSIONS });
@@ -49,7 +49,7 @@ export const convertTorResumableBet = (lastBetData: Bet) => {
 };
 
 // other utils
-export const getSymbolX = (reelIndex: number) => SYMBOL_SIZE * (reelIndex + REEL_PADDING);
+export const getSymbolX = (reelIndex: number) => SYMBOL_SIZE * (reelIndex + REEL_PADDING) - 12.5 * reelIndex + 25;
 export const getSymbolY = (symbolIndexOfBoard: number) => (symbolIndexOfBoard + 0.5) * SYMBOL_SIZE;
 
 export const getSymbolInfo = ({

@@ -27,6 +27,9 @@
 	import Transition from './Transition.svelte';
 	import I18nTest from './I18nTest.svelte';
 	import StickyBoard from './StickyBoard.svelte';
+	import GrungeOverlay from './GrungeOverlay.svelte';
+	import Vignette from './Vignette.svelte';
+	import Banner from './Banner.svelte';
 
 	const context = getContext();
 
@@ -46,6 +49,8 @@
 	<EnablePixiExtension />
 
 	<Background />
+	<GrungeOverlay />
+	<Vignette />
 
 	{#if context.stateLayout.showLoadingScreen}
 		<LoadingScreen onloaded={() => (context.stateLayout.showLoadingScreen = false)} />
@@ -65,10 +70,11 @@
 		<MainContainer>
 			<Board />
 			<Anticipations />
+			<Banner />
 			<StickyBoard />
 		</MainContainer>
 
-		<UI>
+		<!-- <UI>
 			{#snippet gameName()}
 				<UiGameName name="LINES GAME" />
 			{/snippet}
@@ -85,7 +91,7 @@
 					}}
 				/>
 			{/snippet}
-		</UI>
+		</UI> -->
 		<Win />
 		<FreeSpinIntro />
 		{#if ['desktop', 'landscape'].includes(context.stateLayoutDerived.layoutType())}

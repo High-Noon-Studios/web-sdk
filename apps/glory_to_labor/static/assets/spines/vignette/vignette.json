@@ -1,0 +1,49 @@
+{
+"skeleton": {
+	"hash": "gcAKgATy84I",
+	"spine": "4.1.24",
+	"x": -518,
+	"y": -291,
+	"width": 1036,
+	"height": 583,
+	"images": "../PNG/",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" },
+	{ "name": "vignette", "parent": "root", "y": 0.5 }
+],
+"slots": [
+	{ "name": "vignette", "bone": "vignette", "attachment": "Vignette@0.5x" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"vignette": {
+				"Vignette@0.5x": { "width": 1036, "height": 583 }
+			}
+		}
+	}
+],
+"animations": {
+	"idle": {
+		"bones": {
+			"vignette": {
+				"scale": [
+					{
+						"curve": [ 0.333, 1, 0.667, 0.95, 0.333, 1, 0.667, 0.95 ]
+					},
+					{
+						"time": 1,
+						"x": 0.95,
+						"y": 0.95,
+						"curve": [ 1.333, 0.95, 1.667, 1, 1.333, 0.95, 1.667, 1 ]
+					},
+					{ "time": 2 }
+				]
+			}
+		}
+	}
+}
+}

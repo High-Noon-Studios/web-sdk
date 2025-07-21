@@ -32,6 +32,15 @@
 		boardWithAnimateSymbols: async ({ symbolPositions }) => {
 			const getPromises = () =>
 				symbolPositions.map(async (position) => {
+					if (
+						context.stateGame.stickySymbols.some(
+							(stickySymbol) =>
+								stickySymbol.stickySymbol.row === position.row &&
+								stickySymbol.stickySymbol.reel === position.reel,
+						)
+					) {
+						return;
+					}
 					const reelSymbol = context.stateGame.board[position.reel].reelState.symbols[position.row];
 					reelSymbol.symbolState = 'win';
 					await waitForResolve((resolve) => (reelSymbol.oncomplete = resolve));
