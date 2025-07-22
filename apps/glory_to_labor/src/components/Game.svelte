@@ -49,8 +49,6 @@
 	<EnablePixiExtension />
 
 	<Background />
-	<GrungeOverlay />
-	<Vignette />
 
 	{#if context.stateLayout.showLoadingScreen}
 		<LoadingScreen onloaded={() => (context.stateLayout.showLoadingScreen = false)} />
@@ -72,9 +70,11 @@
 			<Anticipations />
 			<Banner />
 			<StickyBoard />
+			<GrungeOverlay />
+			<Vignette />
 		</MainContainer>
 
-		<UI>
+		<UI zIndex={2}>
 			{#snippet gameName()}
 				<UiGameName name="Glory to Labor!" />
 			{/snippet}
@@ -83,7 +83,7 @@
 					anchor={{ x: 1, y: 0 }}
 					text="Glory to Labor!"
 					style={{
-						fontFamily: 'proxima-nova',
+						fontFamily: 'Funnel Sans',
 						fontSize: REM * 1.5,
 						fontWeight: '600',
 						lineHeight: REM * 2,

@@ -5,6 +5,7 @@
 
 	export type Props = OverwriteCursor<PIXI.GraphicsOptions> & {
 		isMask?: boolean;
+		inverseMask?: boolean;
 		draw: (graphics: PIXI.Graphics) => void;
 	};
 </script>
@@ -21,7 +22,10 @@
 
 	$effect(() => {
 		if (props.isMask !== undefined) {
-			parentContext.parent.mask = props.isMask ? graphics : null;
+			parentContext.parent.setMask({
+				mask: graphics,
+				inverse: props.inverseMask ?? false,
+			});
 		}
 	});
 

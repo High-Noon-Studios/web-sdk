@@ -2,7 +2,7 @@ import { WHITE } from 'constants-shared/colors';
 
 export const UI_BASE_SIZE = 150;
 
-export const UI_BASE_FONT_SIZE = UI_BASE_SIZE * 0.3;
+export const UI_BASE_FONT_SIZE = UI_BASE_SIZE * 0.2;
 
 export const UI_TEXT_STYLES = {
 	labelStyle: {

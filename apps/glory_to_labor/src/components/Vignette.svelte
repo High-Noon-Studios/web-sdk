@@ -6,12 +6,12 @@
 	import { getContext } from '../game/context';
 
 	const context = getContext();
-	const { width, height } = context.stateLayoutDerived.canvasSizes();
+	const { width, height } = context.stateLayoutDerived.mainLayoutStandard();
 
 	const SCALE_ADJUSTMENT = 1.1;
 </script>
 
-<FadeContainer show={true} duration={SECOND} zIndex={1}>
+<FadeContainer show={true} duration={SECOND}>
 	<SpineProvider
 		key="vignette"
 		x={width / 2}
@@ -19,17 +19,11 @@
 		height={height * SCALE_ADJUSTMENT}
 		width={width * SCALE_ADJUSTMENT}
 	>
-		<SpineTrack
-			trackIndex={0}
-			animationName={'idle'}
-			loop={true}
-			timeScale={0.5}
-		/>
+		<SpineTrack trackIndex={0} animationName={'idle'} loop={true} timeScale={1} />
 	</SpineProvider>
 </FadeContainer>
 
-
-	<!-- <Sprite
+<!-- <Sprite
 		anchor={0.5}
 		pivot={0.5}
 		key="vignette"

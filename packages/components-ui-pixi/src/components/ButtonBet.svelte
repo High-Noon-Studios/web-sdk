@@ -1,17 +1,26 @@
 <script lang="ts">
-	import { Container, Text } from 'pixi-svelte';
+	import { Container, Circle } from 'pixi-svelte';
 	import { Button, type ButtonProps } from 'components-pixi';
 	import { OnHotkey } from 'components-shared';
 	import { stateBetDerived } from 'state-shared';
 
-	import UiSprite from './UiSprite.svelte';
 	import ButtonBetProvider from './ButtonBetProvider.svelte';
-	import { UI_BASE_FONT_SIZE, UI_BASE_SIZE } from '../constants';
-	import { i18nDerived } from '../i18n/i18nDerived';
+	import { UI_BASE_SIZE } from '../constants';
+	import { BLACK } from 'constants-shared/colors';
+	import UiIconButton from './UiIconButton.svelte';
 
 	const props: Partial<Omit<ButtonProps, 'children'>> = $props();
 	const disabled = $derived(!stateBetDerived.isBetCostAvailable());
 	const sizes = { width: UI_BASE_SIZE, height: UI_BASE_SIZE };
+
+	let icon = $state('bet.png');
+	$effect(() => {
+		if (disabled) {
+			icon = 'bet_disabled.png';
+		} else {
+			icon = 'bet.png';
+		}
+	});
 </script>
 
 <ButtonBetProvider>
@@ -20,31 +29,13 @@
 		<Button {...props} {sizes} {onpress} {disabled}>
 			{#snippet children({ center, hovered })}
 				<Container {...center}>
-					<UiSprite
-						key="bet"
-						width={sizes.width}
-						height={sizes.height}
+					<Circle diameter={sizes.height * 1.3} anchor={0.5} backgroundColor={BLACK} />
+					<UiIconButton
+						{icon}
+						sizes={{ height: sizes.height, width: sizes.width }}
 						anchor={0.5}
-						{...disabled || ['spin_disabled', 'stop_disabled'].includes(key)
-							? {
-									backgroundColor: 0xaaaaaa,
-								}
-							: {}}
-					/>
-					<Text
-						anchor={0.5}
-						text={['spin_default', 'spin_disabled'].includes(key)
-							? i18nDerived.bet()
-							: i18nDerived.stop()}
-						style={{
-							align: 'center',
-							wordWrap: true,
-							wordWrapWidth: 200,
-							fontFamily: 'proxima-nova',
-							fontWeight: '600',
-							fontSize: UI_BASE_FONT_SIZE * 0.9,
-							fill: 0xffffff,
-						}}
+						{onpress}
+						{disabled}
 					/>
 				</Container>
 			{/snippet}

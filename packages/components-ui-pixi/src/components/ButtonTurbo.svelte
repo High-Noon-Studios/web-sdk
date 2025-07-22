@@ -2,13 +2,13 @@
 	import type { ButtonProps } from 'components-pixi';
 	import { stateBet, stateBetDerived } from 'state-shared';
 
-	import UiButton from './UiButton.svelte';
 	import { UI_BASE_SIZE } from '../constants';
 	import { getContext } from '../context';
+	import UiIconButton from './UiIconButton.svelte';
 
 	const props: Partial<Omit<ButtonProps, 'children'>> = $props();
 	const context = getContext();
-	const sizes = { width: UI_BASE_SIZE, height: UI_BASE_SIZE };
+	const sizes = { width: UI_BASE_SIZE * 0.4, height: UI_BASE_SIZE * 0.4 };
 	const active = $derived(stateBet.isTurbo);
 	const disabled = $derived(stateBet.isSpaceHold);
 
@@ -21,6 +21,21 @@
 		stopButtonClick: () => stateBetDerived.updateIsTurbo(true, { persistent: false }),
 		stopButtonEnable: () => stateBetDerived.updateIsTurbo(false, { persistent: false }),
 	});
+
+	let icon = $state('turbo_off.png');
+	$effect(() => {
+		if (!active && !disabled) {
+			icon = 'turbo_off.png';
+		}
+
+		if (active) {
+			icon = 'turbo_active.png';
+		}
+
+		if (disabled) {
+			icon = 'turbo_disabled.png';
+		}
+	});
 </script>
 
-<UiButton {...props} {sizes} {active} {onpress} {disabled} icon="turbo" />
+<UiIconButton {...props} {sizes} {active} {onpress} {disabled} {icon} />

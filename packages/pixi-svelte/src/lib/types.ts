@@ -50,6 +50,7 @@ export type ParticleScaleOption = {
 };
 
 export type BlendModes = 'none' | 'add' | 'multiply' | 'screen';
+export type ColorStop = { offset: number; color: string };
 
 export type Cursor =
 	| 'auto'

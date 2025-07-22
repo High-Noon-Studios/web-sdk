@@ -8,7 +8,7 @@
 	const props: Props = $props();
 </script>
 
-<Rectangle borderRadius={50} {...props} />
+<Rectangle borderRadius={0} {...props} />
 
 <!-- ADD YOUR DESIGN -->
 

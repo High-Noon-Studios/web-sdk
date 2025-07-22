@@ -2,14 +2,22 @@
 	import { stateUi } from 'state-shared';
 	import { BLACK } from 'constants-shared/colors';
 	import { MainContainer } from 'components-layout';
-	import { Container, Rectangle, anchorToPivot } from 'pixi-svelte';
+	import { Container, Rectangle, Circle, anchorToPivot } from 'pixi-svelte';
 
-	import { DESKTOP_BASE_SIZE, DESKTOP_BACKGROUND_WIDTH_LIST } from '../constants';
+	import {
+		DESKTOP_BASE_SIZE,
+		DESKTOP_BACKGROUND_WIDTH_LIST,
+		UI_BASE_SIZE,
+		UI_BASE_FONT_SIZE,
+	} from '../constants';
 	import { getContext } from '../context';
 	import type { LayoutUiProps } from '../types';
 
 	const props: LayoutUiProps = $props();
 	const context = getContext();
+
+	const height = UI_BASE_SIZE;
+	const width = DESKTOP_BACKGROUND_WIDTH_LIST.reduce((sum, width) => sum + width, 0) * 0.7;
 </script>
 
 <Container x={20}>
@@ -23,16 +31,100 @@
 <MainContainer standard alignVertical="bottom">
 	<Container
 		x={context.stateLayoutDerived.mainLayoutStandard().width * 0.5}
-		y={context.stateLayoutDerived.mainLayoutStandard().height - DESKTOP_BASE_SIZE - 10}
+		y={context.stateLayoutDerived.mainLayoutStandard().height - DESKTOP_BASE_SIZE - 50}
 		pivot={anchorToPivot({
 			anchor: { x: 0.5, y: 0 },
 			sizes: {
-				height: DESKTOP_BASE_SIZE,
-				width: DESKTOP_BACKGROUND_WIDTH_LIST.reduce((sum, width) => sum + width, 0),
+				height,
+				width,
 			},
 		})}
 	>
-		<Container y={DESKTOP_BASE_SIZE * 0.5 - 160} x={900 - 500} scale={0.8}>
+		<!-- background -->
+		<Container>
+			<Circle
+				diameter={height * 1.4}
+				x={width * 0.5}
+				y={height * 0.5}
+				anchor={0.5}
+				isMask
+				inverseMask
+			/>
+			<Rectangle {height} {width} backgroundColor={BLACK} />
+			<Rectangle x={UI_BASE_SIZE * 0.5} y={0} width={4} {height} backgroundColor={0x333333} />
+			<Rectangle
+				x={width - UI_BASE_SIZE * 0.5}
+				y={0}
+				width={4}
+				{height}
+				backgroundColor={0x333333}
+			/>
+		</Container>
+
+		<Container x={0} y={0}>
+			{@render props.buttonBuyBonus({ anchor: 0.5 })}
+		</Container>
+
+		<Container
+			x={UI_BASE_SIZE * 0.5 + 16}
+			y={height * 0.5}
+			pivot={anchorToPivot({
+				anchor: { x: 0, y: 0.5 },
+				sizes: {
+					height: UI_BASE_FONT_SIZE * 2,
+					width: 0,
+				},
+			})}
+		>
+			{@render props.amountBalance({ stacked: true })}
+		</Container>
+
+		<Container x={width * 0.5 - 160} y={height * 0.5}>
+			{@render props.buttonTurbo({ anchor: 0.5 })}
+		</Container>
+
+		<Container x={width * 0.5} y={height * 0.5}>
+			{@render props.buttonBet({ anchor: 0.5 })}
+		</Container>
+
+		<Container x={width * 0.5 + 160} y={height * 0.5}>
+			{@render props.buttonAutoSpin({ anchor: 0.5 })}
+		</Container>
+
+		<Container
+			x={width - 160}
+			y={height * 0.5}
+			pivot={anchorToPivot({
+				anchor: { x: 1, y: 0.5 },
+				sizes: {
+					height: UI_BASE_FONT_SIZE * 2,
+					width: 80,
+				},
+			})}
+		>
+			{@render props.amountBet({ stacked: true })}
+		</Container>
+
+		<Container x={width - 120} y={height * 0.5}>
+			{@render props.buttonIncrease({ anchor: 0.5, y: -height * 0.2 })}
+			{@render props.buttonDecrease({ anchor: 0.5, y: height * 0.2 })}
+		</Container>
+
+		<Container
+			x={width - UI_BASE_SIZE * 0.25}
+			y={height * 0.5}
+			pivot={anchorToPivot({
+				anchor: { x: 0, y: 0 },
+				sizes: {
+					height: UI_BASE_FONT_SIZE,
+					width: UI_BASE_FONT_SIZE,
+				},
+			})}
+		>
+			{@render props.buttonMenu({ anchor: 0.5 })}
+		</Container>
+
+		<!-- <Container y={0} x={UI_BASE_SIZE * 0.5 + 16}>
 			{@render props.amountBalance({ stacked: true })}
 		</Container>
 
@@ -70,7 +162,7 @@
 
 		<Container y={DESKTOP_BASE_SIZE * 0.5} x={1440 + 150} scale={0.8}>
 			{@render props.buttonIncrease({ anchor: 0.5 })}
-		</Container>
+		</Container> -->
 	</Container>
 </MainContainer>
 

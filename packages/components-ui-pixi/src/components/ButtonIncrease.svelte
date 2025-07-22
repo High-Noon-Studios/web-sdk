@@ -5,10 +5,11 @@
 	import UiButton from './UiButton.svelte';
 	import { getContext } from '../context';
 	import { UI_BASE_SIZE } from '../constants';
+	import UiIconButton from './UiIconButton.svelte';
 
 	const props: Partial<Omit<ButtonProps, 'children'>> = $props();
 	const context = getContext();
-	const sizes = { width: UI_BASE_SIZE, height: UI_BASE_SIZE };
+	const sizes = { width: UI_BASE_SIZE * 0.4, height: UI_BASE_SIZE * 0.4 };
 	const biggest = $derived(stateConfig.betAmountOptions[stateConfig.betAmountOptions.length - 1]);
 	const disabled = $derived(!context.stateXstateDerived.isIdle() || stateBet.betAmount === biggest);
 
@@ -21,6 +22,12 @@
 
 		stateBetDerived.setBetAmount(nextBigger || biggest);
 	};
+
+	let icon = $state('increase_bet.png');
+	$effect(() => {
+		if (disabled) icon = 'increase_bet_disabled.png';
+		else icon = 'increase_bet.png';
+	});
 </script>
 
-<UiButton {...props} {sizes} {onpress} {disabled} icon="increase" />
+<UiIconButton {...props} {sizes} {onpress} {disabled} {icon} />

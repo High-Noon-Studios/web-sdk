@@ -2,13 +2,13 @@
 	import type { ButtonProps } from 'components-pixi';
 	import { stateBet, stateBetDerived, stateConfig } from 'state-shared';
 
-	import UiButton from './UiButton.svelte';
 	import { getContext } from '../context';
 	import { UI_BASE_SIZE } from '../constants';
+	import UiIconButton from './UiIconButton.svelte';
 
 	const props: Partial<Omit<ButtonProps, 'children'>> = $props();
 	const context = getContext();
-	const sizes = { width: UI_BASE_SIZE, height: UI_BASE_SIZE };
+	const sizes = { width: UI_BASE_SIZE * 0.4, height: UI_BASE_SIZE * 0.4 };
 	const smallest = $derived(stateConfig.betAmountOptions[0]);
 	const disabled = $derived(
 		!context.stateXstateDerived.isIdle() || stateBet.betAmount === smallest,
@@ -23,6 +23,12 @@
 
 		stateBetDerived.setBetAmount(nextSmaller || smallest);
 	};
+
+	let icon = $state('decrease_bet.png');
+	$effect(() => {
+		if (disabled) icon = 'decrease_bet_disabled.png';
+		else icon = 'decrease_bet.png';
+	});
 </script>
 
-<UiButton {...props} {sizes} {onpress} {disabled} icon="decrease" />
+<UiIconButton {...props} {sizes} {onpress} {disabled} {icon} />

@@ -229,4 +229,9 @@ export default {
 		src: new URL('../../assets/sprites/banner/banner.png', import.meta.url).href,
 		preload: true,
 	},
+	icons: {
+		type: 'sprites',
+		src: new URL('../../assets/sprites/ui/icons.json', import.meta.url).href,
+		preload: true,
+	}
 } as const;

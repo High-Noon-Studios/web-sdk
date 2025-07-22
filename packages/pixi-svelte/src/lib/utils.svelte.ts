@@ -1,6 +1,8 @@
-import WebFont from 'webfontloader';
+import * as PIXI from 'pixi.js';
 
-import type { PixiPoint, Sizes } from './types';
+import type { ColorStop, PixiPoint, Sizes } from './types';
+
+import WebFont from 'webfontloader';
 
 export const REM = 16;
 export const MIN_CLICKABLE_SIZE = 3 * REM; // 44 x 44 is minimum clickable size
@@ -62,9 +64,12 @@ export const preloadFont = () =>
 	new Promise<void>((resolve) => {
 		try {
 			WebFont.load({
-				typekit: {
-					id: 'aba0ebl',
+				google: {
+					families: ['Funnel Sans'],
 				},
+				// typekit: {
+				// 	id: 'aba0ebl',
+				// },
 				active: () => {
 					resolve();
 				},
@@ -103,4 +108,39 @@ export function propsSyncEffect<TProps extends object, TTarget>({
 				});
 		}
 	});
+}
+
+export function createGradientTexture(
+  colorStops: ColorStop[],
+  quality: number = 256
+) {
+  const canvas = document.createElement('canvas');
+  canvas.width = quality;
+  canvas.height = 1;
+
+  const ctx = canvas.getContext('2d')!;
+  const grd = ctx.createLinearGradient(0, 0, quality, 0);
+
+  // Validate and add color stops
+  if (!colorStops || colorStops.length === 0) {
+    throw new Error('At least one color stop is required');
+  }
+  for (const stop of colorStops) {
+    if (
+      typeof stop.offset !== 'number' ||
+      stop.offset < 0 ||
+      stop.offset > 1 ||
+      typeof stop.color !== 'string'
+    ) {
+      throw new Error(
+        `Invalid color stop: ${JSON.stringify(stop)}. Offset must be between 0 and 1 and color must be a string.`
+      );
+    }
+    grd.addColorStop(stop.offset, stop.color);
+  }
+
+  ctx.fillStyle = grd;
+  ctx.fillRect(0, 0, quality, 1);
+
+  return PIXI.Texture.from(canvas);
 }
