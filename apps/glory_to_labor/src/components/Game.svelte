@@ -4,7 +4,7 @@
 	import { EnablePixiExtension } from 'components-pixi';
 	import { EnableHotkey } from 'components-shared';
 	import { MainContainer } from 'components-layout';
-	import { App, Text, REM } from 'pixi-svelte';
+	import { App, Text, REM, Sprite } from 'pixi-svelte';
 	import { stateModal } from 'state-shared';
 
 	import { UI, UiGameName } from 'components-ui-pixi';
@@ -74,14 +74,14 @@
 			<StickyBoard />
 		</MainContainer>
 
-		<!-- <UI>
+		<UI>
 			{#snippet gameName()}
-				<UiGameName name="LINES GAME" />
+				<UiGameName name="Glory to Labor!" />
 			{/snippet}
 			{#snippet logo()}
 				<Text
 					anchor={{ x: 1, y: 0 }}
-					text="ADD YOUR LOGO"
+					text="Glory to Labor!"
 					style={{
 						fontFamily: 'proxima-nova',
 						fontSize: REM * 1.5,
@@ -91,7 +91,7 @@
 					}}
 				/>
 			{/snippet}
-		</UI> -->
+		</UI>
 		<Win />
 		<FreeSpinIntro />
 		{#if ['desktop', 'landscape'].includes(context.stateLayoutDerived.layoutType())}
@@ -100,7 +100,7 @@
 		<FreeSpinOutro />
 		<Transition />
 
-		<I18nTest />
+		<!-- <I18nTest /> -->
 	{/if}
 </App>
 

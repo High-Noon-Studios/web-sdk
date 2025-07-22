@@ -1,5 +1,4 @@
 import type { BaseBet } from 'utils-bet';
-
 import type { BetModeKey } from './stateBet.svelte';
 
 export const FORCE_TYPE_LIST = ['api', 'json', 'pastBets'] as const;
@@ -18,7 +17,7 @@ export const stateForce = $state({
 	pastBets: [] as BaseBet[],
 	force: false,
 	forceType: 'api' as ForceTypeType,
-	forceBetModeKey: 'BASE' as BetModeKey,
+	forceBetModeKey: 'base' as BetModeKey,
 	forceSearch: {
 		bookID: undefined,
 		kind: 'Any',
