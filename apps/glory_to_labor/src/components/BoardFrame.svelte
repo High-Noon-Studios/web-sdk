@@ -51,8 +51,8 @@
 		key="reelhouse"
 		x={context.stateGameDerived.boardLayout().x * POSITION_ADJUSTMENT}
 		y={context.stateGameDerived.boardLayout().y * POSITION_ADJUSTMENT}
-		width={context.stateGameDerived.boardLayout().width * SPINE_SCALE.width}
-		height={context.stateGameDerived.boardLayout().height}
+		width={context.stateGameDerived.boardLayout().width * 0.55}
+		height={context.stateGameDerived.boardLayout().height * 0.6}
 	>
 		<SpineTrack
 			trackIndex={0}

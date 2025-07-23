@@ -40,11 +40,9 @@
 	const {wedges, innerR, outerR, color}: Props = $props();
 
 	const context = getContext();
-	const { width, height } = context.stateLayoutDerived.canvasSizes();
 </script>
 
 <Rectangle {...context.stateLayoutDerived.canvasSizes()} backgroundColor={COLORS.cream} zIndex={-3} />
-
 
 <Graphics draw={(g) => {
   const step = (Math.PI * 2) / wedges;
@@ -61,4 +59,4 @@
     g.closePath();
     g.fill(color);
   }
-}} />
+}} cacheAsTexture={true} />

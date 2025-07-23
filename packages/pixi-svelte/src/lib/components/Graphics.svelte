@@ -6,6 +6,7 @@
 	export type Props = OverwriteCursor<PIXI.GraphicsOptions> & {
 		isMask?: boolean;
 		inverseMask?: boolean;
+		cacheAsTexture?: boolean | PIXI.CacheAsTextureOptions;
 		draw: (graphics: PIXI.Graphics) => void;
 	};
 </script>
@@ -18,7 +19,7 @@
 	const parentContext = getContextParent();
 	const graphics = new PIXI.Graphics();
 
-	propsSyncEffect({ props, target: graphics, ignore: ['isMask', 'draw'] });
+	propsSyncEffect({ props, target: graphics, ignore: ['isMask', 'draw', 'cacheAsTexture'] });
 
 	$effect(() => {
 		if (props.isMask !== undefined) {
@@ -26,6 +27,12 @@
 				mask: graphics,
 				inverse: props.inverseMask ?? false,
 			});
+		}
+	});
+
+	$effect(() => {
+		if (props.cacheAsTexture !== undefined) {
+			graphics.cacheAsTexture(props.cacheAsTexture);
 		}
 	});
 
