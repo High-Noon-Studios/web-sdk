@@ -58,7 +58,7 @@
 	<EnablePixiExtension />
 
 	<Container filters={[crtFilter]}>
-		<Background />
+		<Background  />
 	</Container>
 
 		{#if context.stateLayout.showLoadingScreen}
