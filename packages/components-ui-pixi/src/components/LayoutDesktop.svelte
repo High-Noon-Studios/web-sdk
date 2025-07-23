@@ -124,6 +124,10 @@
 			{@render props.buttonMenu({ anchor: 0.5 })}
 		</Container>
 
+		<Container y={DESKTOP_BASE_SIZE * 0.5 - 160} x={900} scale={0.8}>
+			{@render props.amountWin({ stacked: true })}
+		</Container>
+
 		<!-- <Container y={0} x={UI_BASE_SIZE * 0.5 + 16}>
 			{@render props.amountBalance({ stacked: true })}
 		</Container>

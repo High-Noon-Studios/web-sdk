@@ -132,7 +132,7 @@ export const PORTRAIT_MAIN_SIZES = {
 
 export const HIGH_SYMBOLS = ['H1', 'H2', 'H3', 'H4'];
 
-export const INITIAL_SYMBOL_STATE: SymbolState = 'static';
+export const INITIAL_SYMBOL_STATE: SymbolState = 'win';
 
 const HIGH_SYMBOL_SIZE = 1.1;
 const SCATTER_SYMBOL_SIZE = 1.5;

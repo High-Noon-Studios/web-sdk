@@ -13,6 +13,8 @@
 	const SPINE_SCALE = { width: 0.62, height: 0.66 };
 	const SPRITE_SCALE = { width: 1, height: 0.69 };
 	const POSITION_ADJUSTMENT = 1;
+	const BOARD_SIZE_ADJUSTMENT_X = 1.1;
+  const BOARD_SIZE_ADJUSTMENT_Y = 1.13;
 
 	type AnimationName = 'reelhouse_glow_start' | 'reelhouse_glow_idle' | 'reelhouse_glow_exit';
 
@@ -50,7 +52,7 @@
 		x={context.stateGameDerived.boardLayout().x * POSITION_ADJUSTMENT}
 		y={context.stateGameDerived.boardLayout().y * POSITION_ADJUSTMENT}
 		width={context.stateGameDerived.boardLayout().width * SPINE_SCALE.width}
-		height={context.stateGameDerived.boardLayout().height * SPINE_SCALE.height}
+		height={context.stateGameDerived.boardLayout().height}
 	>
 		<SpineTrack
 			trackIndex={0}
@@ -81,7 +83,7 @@
 		anchor={0.5}
 		x={context.stateGameDerived.boardLayout().x * POSITION_ADJUSTMENT}
 		y={context.stateGameDerived.boardLayout().y * POSITION_ADJUSTMENT}
-		width={context.stateGameDerived.boardLayout().width}
-		height={context.stateGameDerived.boardLayout().width * SPRITE_SCALE.height}
+		width={context.stateGameDerived.boardLayout().width * BOARD_SIZE_ADJUSTMENT_X}
+		height={context.stateGameDerived.boardLayout().height * BOARD_SIZE_ADJUSTMENT_Y}
 	/>
 </Container>

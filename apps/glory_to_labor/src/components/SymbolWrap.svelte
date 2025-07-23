@@ -21,11 +21,11 @@
 	);
 	const top = 0;
 	const bottom = SYMBOL_SIZE * BOARD_DIMENSIONS.y;
-	const inFrame = $derived(props.y >= top && props.y <= bottom);
+	const inFrame = $derived(props.y >= top - SYMBOL_SIZE && props.y <= bottom + SYMBOL_SIZE);
 </script>
 
 {#if props.debug || (show && inFrame)}
-	<Container x={props.x} y={props.y}>
+	<Container x={props.x} y={props.y} scale={0.95}>
 		{@render props.children()}
 	</Container>
 {/if}

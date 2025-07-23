@@ -1,4 +1,4 @@
-import { BOARD_DIMENSIONS, REEL_PADDING, SYMBOL_INFO_MAP, SYMBOL_SIZE } from './constants';
+import { BOARD_DIMENSIONS, SYMBOL_INFO_MAP, SYMBOL_SIZE } from './constants';
 import type { Bet, BookEventOfType } from './typesBookEvent';
 import type { RawSymbol, SymbolState } from './types';
 
@@ -49,8 +49,8 @@ export const convertTorResumableBet = (lastBetData: Bet) => {
 };
 
 // other utils
-export const getSymbolX = (reelIndex: number) => SYMBOL_SIZE * (reelIndex + REEL_PADDING) - 12.5 * reelIndex + 25;
-export const getSymbolY = (symbolIndexOfBoard: number) => (symbolIndexOfBoard + 0.5) * SYMBOL_SIZE;
+export const getSymbolX = (reelIndex: number) => SYMBOL_SIZE * 0.5 + SYMBOL_SIZE * reelIndex;
+export const getSymbolY = (symbolIndexOfBoard: number) => symbolIndexOfBoard * SYMBOL_SIZE + SYMBOL_SIZE * 0.5;
 
 export const getSymbolInfo = ({
 	rawSymbol,
