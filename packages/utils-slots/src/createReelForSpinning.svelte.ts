@@ -1,12 +1,11 @@
-import _ from 'lodash';
-import { Tween } from 'svelte/motion';
-import { sineOut, backIn, linear } from 'svelte/easing';
+import type { SpinType, SpinningReelCreateOptions, SpinningReelSpinOptions } from './types';
+import { backIn, linear, sineOut } from 'svelte/easing';
 
+import { Tween } from 'svelte/motion';
+import _ from 'lodash';
+import { createInterruptible } from 'utils-shared/interruptible';
 import { stateBet } from 'state-shared';
 import { waitForTimeout } from 'utils-shared/wait';
-import { createInterruptible } from 'utils-shared/interruptible';
-
-import type { SpinningReelCreateOptions, SpinningReelSpinOptions, SpinType } from './types';
 
 export type SpinningReelMotion = 'spinning' | 'bouncing' | 'stopped';
 export type SpinningReelSymbolState = 'static' | 'land' | 'spin';

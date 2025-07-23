@@ -134,29 +134,29 @@ export const HIGH_SYMBOLS = ['H1', 'H2', 'H3', 'H4'];
 
 export const INITIAL_SYMBOL_STATE: SymbolState = 'win';
 
-const HIGH_SYMBOL_SIZE = 1.1;
+const HIGH_SYMBOL_SIZE = 1;
 const SCATTER_SYMBOL_SIZE = 1.5;
 
 const SPIN_OPTIONS_SHARED = {
 	reelBounceBackSpeed: 0.1,
-	reelSpinSpeedBeforeBounce: 3,
-	reelPaddingMultiplierNormal: 1,
-	reelPaddingMultiplierAnticipated: 5,
+	reelSpinSpeedBeforeBounce: 6,
+	reelPaddingMultiplierNormal: 2,
+	reelPaddingMultiplierAnticipated: 12,
 	reelSpinDelay: 1,
 };
 
 export const SPIN_OPTIONS_DEFAULT = {
 	...SPIN_OPTIONS_SHARED,
-	reelPreSpinSpeed: 3,
-	reelSpinSpeed: 3,
+	reelPreSpinSpeed: 6,
+	reelSpinSpeed: 6,
 	reelBounceSizeMulti: 0.15,
 };
 
 export const SPIN_OPTIONS_FAST = {
 	...SPIN_OPTIONS_SHARED,
-	reelPreSpinSpeed: 5,
-	reelSpinSpeed: 5,
-	reelBounceSizeMulti: 0.05,
+	reelPreSpinSpeed: 10,
+	reelSpinSpeed: 10,
+	reelBounceSizeMulti: 0.1,
 };
 
 export const MOTION_BLUR_VELOCITY = 31;
@@ -195,7 +195,7 @@ const l4Static = { type: 'sprite', assetKey: 'L4.png', sizeRatios: { width: 1.37
 const l5Static = { type: 'sprite', assetKey: 'L5.png', sizeRatios: { width: 1.37 / 2.15, height: 2.15 / 2.15 } };
 
 const sStatic = { type: 'spine', assetKey: 'scatter', animationName: 'idle', sizeRatios: { width: 1, height: 1 } };
-const wStatic = { type: 'sprite', assetKey: 'Wild.png', sizeRatios: { width: 1.2 * 1.37 / 2.15, height: 1.2 * 2.15 / 2.15 } };
+const wStatic = { type: 'sprite', assetKey: 'Wild.png', sizeRatios: { width: 1.1 * 1.37 / 2.15, height: 1.1 * 2.15 / 2.15 } };
 
 export const SYMBOL_INFO_MAP = {
 	H1: {

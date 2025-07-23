@@ -27,10 +27,8 @@
 		x:
 			context.stateGameDerived.boardLayout().x -
 			context.stateGameDerived.boardLayout().width * 0.5 -
-			panelSizes.width -
-			SYMBOL_SIZE * 0.7,
+			panelSizes.width,
 		y:
-			context.stateGameDerived.boardLayout().y -
 			context.stateGameDerived.boardLayout().height * 0.5,
 	});
 
