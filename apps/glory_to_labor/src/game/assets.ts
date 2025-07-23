@@ -202,15 +202,6 @@ export default {
 		src: new URL('../../assets/audio/sounds.json', import.meta.url).href,
 		preload: true,
 	},
-	vignette: {
-		type: 'spine',
-		src: {
-			atlas: new URL('../../assets/spines/vignette/vignette.atlas', import.meta.url).href,
-			skeleton: new URL('../../assets/spines/vignette/vignette.json', import.meta.url).href,
-			scale: 1,
-		},
-		preload: true,
-	},
 	scatter: {
 		type: 'spine',
 		src: {
@@ -218,11 +209,6 @@ export default {
 			skeleton: new URL('../../assets/spines/scatter/scatter.json', import.meta.url).href,
 			scale: 1,
 		},
-	},
-	grunge: {
-		type: 'sprite',
-		src: new URL('../../assets/sprites/grunge/grunge.png', import.meta.url).href,
-		preload: true
 	},
 	banner: {
 		type: 'sprite',

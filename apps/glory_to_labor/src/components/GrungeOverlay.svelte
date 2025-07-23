@@ -1,26 +1,31 @@
 <script lang="ts">
-	import { Sprite } from 'pixi-svelte';
-	import { FadeContainer } from 'components-pixi';
-	import { SECOND } from 'constants-shared/time';
-
+	import { Container, Filters, Graphics } from 'pixi-svelte';
 	import { getContext } from '../game/context';
 
 	const context = getContext();
 	const { width, height } = context.stateLayoutDerived.mainLayoutStandard();
 
-	const SCALE_ADJUSTMENT = 1;
+	const oldFilmFilter = new Filters.CRTFilter({
+		noise: 0.2,
+		noiseSize: 1,
+		seed: 1,
+		vignetting: 0.3,
+		vignettingAlpha: 1,
+		vignettingBlur: 0.68,
+	});
 </script>
 
-<FadeContainer show={true} duration={SECOND}>
-	<Sprite
-		anchor={0.5}
-		pivot={0.5}
-		key="grunge"
-		x={width / 2}
-		y={height / 2}
-		width={width * SCALE_ADJUSTMENT}
-		height={height * SCALE_ADJUSTMENT}
+<Container filters={[oldFilmFilter]}>
+	<Graphics
+		draw={(g) => {
+			g.clear();
+			g.rect(0, 0, width, height);
+			g.fill({ color: 0xffffff, alpha: 0.1 });
+		}}
+		x={0}
+		y={0}
+		width={width}
+		height={height}
 		blendMode="screen"
-		alpha={0.5}
 	/>
-</FadeContainer>
+</Container>

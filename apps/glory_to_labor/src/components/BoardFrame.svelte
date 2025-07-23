@@ -5,7 +5,7 @@
 </script>
 
 <script lang="ts">
-	import { Sprite, SpineProvider, SpineTrack } from 'pixi-svelte';
+	import { Sprite, SpineProvider, SpineTrack, Filters, Container } from 'pixi-svelte';
 
 	import { getContext } from '../game/context';
 
@@ -27,6 +27,19 @@
 		boardFrameGlowHide: () => {
 			if (animationName) animationName = 'reelhouse_glow_exit';
 		},
+	});
+
+	const oldFilmFilter = new Filters.OldFilmFilter({
+		noise: 0.1,
+		noiseSize: 0.5,
+		scratch: 0.1,
+		scratchDensity: 1,
+		scratchWidth: 0.5,
+		seed: 1,
+		sepia: 0,
+		vignetting: 0.2,
+		vignettingAlpha: 0.5,
+		vignettingBlur: 0.6,
 	});
 </script>
 
@@ -62,11 +75,13 @@
 	</SpineProvider>
 {/if}
 
-<Sprite
-	key="reelsFrame"
-	anchor={0.5}
-	x={context.stateGameDerived.boardLayout().x * POSITION_ADJUSTMENT}
-	y={context.stateGameDerived.boardLayout().y * POSITION_ADJUSTMENT}
-	width={context.stateGameDerived.boardLayout().width}
-	height={context.stateGameDerived.boardLayout().width * SPRITE_SCALE.height}
-/>
+<Container filters={[oldFilmFilter]}>
+	<Sprite
+		key="reelsFrame"
+		anchor={0.5}
+		x={context.stateGameDerived.boardLayout().x * POSITION_ADJUSTMENT}
+		y={context.stateGameDerived.boardLayout().y * POSITION_ADJUSTMENT}
+		width={context.stateGameDerived.boardLayout().width}
+		height={context.stateGameDerived.boardLayout().width * SPRITE_SCALE.height}
+	/>
+</Container>

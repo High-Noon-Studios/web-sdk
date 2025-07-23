@@ -92,7 +92,7 @@
 		</Container>
 
 		<Container
-			x={width - 160}
+			x={width - 200}
 			y={height * 0.5}
 			pivot={anchorToPivot({
 				anchor: { x: 1, y: 0.5 },

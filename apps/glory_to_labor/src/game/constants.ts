@@ -2,6 +2,15 @@ import type { RawSymbol, SymbolState } from './types';
 
 import _ from 'lodash';
 
+export const COLORS = {
+	white: 0xf2f2f2,
+	red: 0xbe2424,
+	orange: 0xf29a2e,
+	yellow: 0xf1c22d,
+	rust: 0xbe5c2e,
+	soot: 0x5b5147,
+	cream: 0xe5d6ab,
+}
 export const SYMBOL_SIZE = 150;
 
 export const REEL_PADDING = 0.5;

@@ -4,6 +4,7 @@
 	import { SECOND } from 'constants-shared/time';
 
 	import { getContext } from '../game/context';
+	import { COLORS } from '../game/constants';
 
 	const context = getContext();
 	const backgroundProps = $derived(
@@ -13,15 +14,12 @@
 	const showFeatureBackground = $derived(context.stateGame.gameType === 'freegame');
 </script>
 
-<Rectangle {...context.stateLayoutDerived.canvasSizes()} backgroundColor={0x000000} zIndex={-3} />
+<Rectangle {...context.stateLayoutDerived.canvasSizes()} backgroundColor={COLORS.cream} zIndex={-3} />
 
 <FadeContainer show={showBaseBackground} duration={SECOND} zIndex={-2}>
 	<SpineProvider key="backgroundAnimation" {...backgroundProps}>
 		<SpineTrack trackIndex={0} animationName={'enter'} />
 	</SpineProvider>
-	<!-- <SpineProvider key="foregroundAnimation" {...backgroundProps}>
-		<SpineTrack trackIndex={0} animationName={'dust'} loop />
-	</SpineProvider> -->
 </FadeContainer>
 
 <FadeContainer show={showFeatureBackground} duration={SECOND} zIndex={-1}>
