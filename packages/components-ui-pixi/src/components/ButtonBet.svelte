@@ -29,10 +29,10 @@
 		<Button {...props} {sizes} {onpress} {disabled}>
 			{#snippet children({ center, hovered })}
 				<Container {...center}>
-					<Circle diameter={sizes.height * 1.3} anchor={0.5} backgroundColor={BLACK} />
+					<Circle diameter={sizes.height * 1.15} anchor={0.5} backgroundColor={BLACK} alpha={0.9} />
 					<UiIconButton
 						{icon}
-						sizes={{ height: sizes.height, width: sizes.width }}
+						sizes={{ height: sizes.height * 0.8, width: sizes.width * 0.8 }}
 						anchor={0.5}
 						{onpress}
 						{disabled}

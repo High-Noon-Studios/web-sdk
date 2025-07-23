@@ -24,6 +24,8 @@
 
 <Button {...buttonProps}>
 	{#snippet children({ center, hovered, pressed })}
+	  {@render childrenFromParent?.()}
+
 		<Sprite
 			{...center}
 			anchor={0.5}
@@ -31,7 +33,5 @@
 			height={buttonProps.sizes.height}
 			key={icon}
 		/>
-
-		{@render childrenFromParent?.()}
 	{/snippet}
 </Button>

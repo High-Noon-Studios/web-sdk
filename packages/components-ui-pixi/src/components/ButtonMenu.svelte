@@ -2,10 +2,11 @@
 	import type { ButtonProps } from 'components-pixi';
 	import { stateUi } from 'state-shared';
 
-	import UiButton from './UiButton.svelte';
 	import { UI_BASE_SIZE } from '../constants';
 	import { getContext } from '../context';
 	import UiIconButton from './UiIconButton.svelte';
+	import { Rectangle } from 'pixi-svelte';
+	import { BLACK } from 'constants-shared/colors';
 
 	const props: Partial<Omit<ButtonProps, 'children'>> = $props();
 	const context = getContext();
@@ -17,4 +18,6 @@
 	};
 </script>
 
-<UiIconButton {...props} {sizes} {onpress} icon="menu.png" />
+<UiIconButton {...props} {sizes} {onpress} icon="menu.png">
+	<Rectangle height={props.height ?? 0} width={UI_BASE_SIZE * 0.5} backgroundColor={BLACK} alpha={0.9} x={sizes.width / 2} y={sizes.height / 2} anchor={0.5}/>
+</UiIconButton>

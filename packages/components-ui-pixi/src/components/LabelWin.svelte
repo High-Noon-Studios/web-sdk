@@ -21,4 +21,4 @@
 	});
 </script>
 
-<UiLabel tiled {label} {value} stacked={props.stacked} />
+<UiLabel tiled={false} {label} {value} stacked={props.stacked} />

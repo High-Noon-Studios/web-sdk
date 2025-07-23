@@ -17,7 +17,7 @@
 	const context = getContext();
 
 	const height = UI_BASE_SIZE;
-	const width = DESKTOP_BACKGROUND_WIDTH_LIST.reduce((sum, width) => sum + width, 0) * 0.7;
+	const width = DESKTOP_BACKGROUND_WIDTH_LIST.reduce((sum, width) => sum + width, 0) * 0.6;
 </script>
 
 <Container x={20}>
@@ -43,30 +43,29 @@
 		<!-- background -->
 		<Container>
 			<Circle
-				diameter={height * 1.4}
+				diameter={height * 1.2}
 				x={width * 0.5}
 				y={height * 0.5}
 				anchor={0.5}
 				isMask
 				inverseMask
 			/>
-			<Rectangle {height} {width} backgroundColor={BLACK} />
-			<Rectangle x={UI_BASE_SIZE * 0.5} y={0} width={4} {height} backgroundColor={0x333333} />
-			<Rectangle
-				x={width - UI_BASE_SIZE * 0.5}
-				y={0}
-				width={4}
-				{height}
-				backgroundColor={0x333333}
-			/>
+
+			<Rectangle height={height * 0.8} y={height * 0.1} {width} backgroundColor={BLACK} alpha={0.9} />
 		</Container>
 
-		<Container x={0} y={0}>
+		<Container x={-4} y={0} pivot={anchorToPivot({
+			anchor: { x: 1, y: 0 },
+			sizes: {
+				height: UI_BASE_FONT_SIZE * 2,
+				width: UI_BASE_SIZE * 0.5,
+			},
+		})}>
 			{@render props.buttonBuyBonus({ anchor: 0.5 })}
 		</Container>
 
 		<Container
-			x={UI_BASE_SIZE * 0.5 + 16}
+			x={32}
 			y={height * 0.5}
 			pivot={anchorToPivot({
 				anchor: { x: 0, y: 0.5 },
@@ -92,7 +91,7 @@
 		</Container>
 
 		<Container
-			x={width - 200}
+			x={width}
 			y={height * 0.5}
 			pivot={anchorToPivot({
 				anchor: { x: 1, y: 0.5 },
@@ -105,13 +104,13 @@
 			{@render props.amountBet({ stacked: true })}
 		</Container>
 
-		<Container x={width - 120} y={height * 0.5}>
-			{@render props.buttonIncrease({ anchor: 0.5, y: -height * 0.2 })}
-			{@render props.buttonDecrease({ anchor: 0.5, y: height * 0.2 })}
+		<Container x={width - UI_BASE_SIZE * 0.125 - 32} y={height * 0.5}>
+			{@render props.buttonIncrease({ anchor: 0.5, y: -height * 0.15 })}
+			{@render props.buttonDecrease({ anchor: 0.5, y: height * 0.15 })}
 		</Container>
 
 		<Container
-			x={width - UI_BASE_SIZE * 0.25}
+			x={width + UI_BASE_SIZE * 0.25 + 4}
 			y={height * 0.5}
 			pivot={anchorToPivot({
 				anchor: { x: 0, y: 0 },
@@ -121,10 +120,20 @@
 				},
 			})}
 		>
-			{@render props.buttonMenu({ anchor: 0.5 })}
+			{@render props.buttonMenu({ anchor: 0.5, height: height * 0.8 })}
 		</Container>
 
-		<Container y={DESKTOP_BASE_SIZE * 0.5 - 160} x={900} scale={0.8}>
+		<Container
+			x={200}
+			y={height * 0.5}
+			pivot={anchorToPivot({
+				anchor: { x: 0, y: 0.5 },
+				sizes: {
+					height: UI_BASE_FONT_SIZE * 2,
+					width: 0,
+				},
+			})}
+		>
 			{@render props.amountWin({ stacked: true })}
 		</Container>
 

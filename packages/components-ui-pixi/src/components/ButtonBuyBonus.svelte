@@ -1,11 +1,12 @@
 <script lang="ts">
-	import { Text, createGradientTexture } from 'pixi-svelte';
+	import { Text } from 'pixi-svelte';
 	import { Button, type ButtonProps } from 'components-pixi';
 	import { stateModal, stateBet, stateBetDerived } from 'state-shared';
 
 	import { UI_BASE_SIZE } from '../constants';
 	import { getContext } from '../context';
-	import { Container, BaseSprite } from 'pixi-svelte';
+	import { Container, Rectangle } from 'pixi-svelte';
+	import { GREEN } from 'constants-shared/colors';
 
 	const props: Partial<Omit<ButtonProps, 'children'>> = $props();
 	const { stateXstateDerived, eventEmitter } = getContext();
@@ -38,11 +39,11 @@
 		return 'default' as const;
 	};
 
-	const gradientTexture = createGradientTexture([
-		{ offset: 0, color: '#93EBD4' },
-		{ offset: 0.5, color: '#6E96D5' },
-		{ offset: 1, color: '#65B1E6' },
-	]);
+	// const gradientTexture = createGradientTexture([
+	// 	{ offset: 0, color: '#93EBD4' },
+	// 	{ offset: 0.5, color: '#6E96D5' },
+	// 	{ offset: 1, color: '#65B1E6' },
+	// ]);
 </script>
 
 <Button {...props} {sizes} {disabled} {onpress}>
@@ -55,12 +56,18 @@
 		})}
 
 		<Container {...center}>
-			<BaseSprite
+			<!-- <BaseSprite
 				width={sizes.height}
 				height={sizes.width}
 				texture={gradientTexture}
 				rotation={Math.PI * 0.5}
 				pivot={{ x: 0.5, y: 1 }}
+			/> -->
+			<Rectangle
+				width={sizes.width}
+				height={sizes.height * 0.8}
+				y={sizes.height * 0.1}
+				backgroundColor={GREEN}
 			/>
 			<Text
 				anchor={{ x: 0.5, y: 0.5 }}
@@ -69,7 +76,7 @@
 				style={{
 					fill: 0xffffff,
 					fontFamily: 'Arial Black',
-					fontSize: UI_BASE_SIZE * 0.15,
+					fontSize: UI_BASE_SIZE * 0.12,
 					fontWeight: 'bolder',
 				}}
 				{...center}
