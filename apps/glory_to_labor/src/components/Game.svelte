@@ -38,7 +38,7 @@
 		},
 	});
 
-	const oldFilmFilter = new Filters.CRTFilter({
+	const crtFilter = new Filters.CRTFilter({
 		noise: 0.1,
 		noiseSize: 0.5,
 		lineWidth: 1,
@@ -57,7 +57,7 @@
 	<EnableGameActor />
 	<EnablePixiExtension />
 
-	<Container filters={[oldFilmFilter]}>
+	<Container filters={[crtFilter]}>
 		<Background />
 	</Container>
 
@@ -79,7 +79,7 @@
 			<MainContainer>
 				<Board />
 				<Anticipations />
-				<Banner />
+					<Banner />
 				<StickyBoard />
 			</MainContainer>
 
