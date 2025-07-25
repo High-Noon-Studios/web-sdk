@@ -69,6 +69,10 @@ export default {
 			scale: 1,
 		},
 	},
+	reels_frame: {
+		type: 'sprite',
+		src: new URL('../../assets/sprites/reelsFrame/reels_frame.json', import.meta.url).href,
+	},
 	reelsFrame: {
 		type: 'sprite',
 		src: new URL('../../assets/sprites/reelsFrame/reelsFrame.png', import.meta.url).href,

@@ -14,9 +14,9 @@
 	import { anchorToPivot, BitmapText, Container, Sprite, type Sizes } from 'pixi-svelte';
 
 	const context = getContext();
-	const PANEL_KEY_DESKTOP = 'Frame_FSCounter.png';
+	// const PANEL_KEY_DESKTOP = 'Frame_FSCounter.png';
 	const PANEL_RATIO_DESKTOP = 824 / 622;
-	const panelKey = PANEL_KEY_DESKTOP;
+	// const panelKey = PANEL_KEY_DESKTOP;
 	const panelWidth = $derived(SYMBOL_SIZE * 2);
 	const panelSizes = $derived({
 		width: panelWidth,
@@ -58,7 +58,7 @@
 
 <MainContainer>
 	<FadeContainer {show} {...position} {scale}>
-		<Sprite key={panelKey} {...panelSizes} />
+		<!-- <Sprite key={panelKey} {...panelSizes} /> -->
 		<Container
 			x={panelSizes.width * 0.5}
 			y={panelSizes.height * 0.48}
