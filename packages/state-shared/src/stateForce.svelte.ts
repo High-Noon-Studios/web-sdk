@@ -17,7 +17,7 @@ export const stateForce = $state({
 	pastBets: [] as BaseBet[],
 	force: false,
 	forceType: 'api' as ForceTypeType,
-	forceBetModeKey: 'BASE' as BetModeKey,
+	forceBetModeKey: 'base' as BetModeKey,
 	forceSearch: {
 		bookID: undefined,
 		kind: 'Any',

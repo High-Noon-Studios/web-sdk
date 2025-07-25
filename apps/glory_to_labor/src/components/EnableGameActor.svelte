@@ -41,8 +41,10 @@
 {#if props.debug}
 	<Text
 		x={context.stateLayoutDerived.canvasSizes().width}
+		y={100}
 		anchor={{ x: 1, y: 0 }}
 		style={{ fill: 0xffffff }}
 		text={JSON.stringify(context.stateXstate.value, undefined, 2)}
+		zIndex={1000}
 	/>
 {/if}

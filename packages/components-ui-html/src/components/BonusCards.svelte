@@ -44,6 +44,7 @@
 			{#snippet button()}
 				<Button
 					onclick={() => {
+						console.log(betModeData.mode);
 						stateBonus.selectedBetModeKey = betModeData.mode;
 						eventEmitter.broadcast({ type: 'buyBonusConfirm' });
 						eventEmitter.broadcast({ type: 'soundPressGeneral' });

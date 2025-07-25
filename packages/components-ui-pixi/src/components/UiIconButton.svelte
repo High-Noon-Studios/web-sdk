@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { Sprite } from 'pixi-svelte';
+	import { Rectangle, Sprite } from 'pixi-svelte';
 	import { Button, type ButtonProps } from 'components-pixi';
 
-	import type { ButtonIcon } from '../types';
 	import type { Snippet } from 'svelte';
 
 	type Props = Omit<ButtonProps, 'children'> & {

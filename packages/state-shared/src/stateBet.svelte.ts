@@ -11,7 +11,7 @@ export const stateBet = $state({
 	betAmount: 1,
 	wageredBetAmount: 1,
 	lastBet: null as LastBet,
-	activeBetModeKey: 'BASE' as BetModeKey,
+	activeBetModeKey: 'base' as BetModeKey,
 	winBookEventAmount: 0,
 	autoSpinsLoss: 0,
 	autoSpinsCounter: 0,

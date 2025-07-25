@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Container, Circle } from 'pixi-svelte';
+	import { Container, Circle, Sprite } from 'pixi-svelte';
 	import { Button, type ButtonProps } from 'components-pixi';
 	import { OnHotkey } from 'components-shared';
 	import { stateBetDerived } from 'state-shared';
@@ -12,30 +12,25 @@
 	const props: Partial<Omit<ButtonProps, 'children'>> = $props();
 	const disabled = $derived(!stateBetDerived.isBetCostAvailable());
 	const sizes = { width: UI_BASE_SIZE, height: UI_BASE_SIZE };
-
-	let icon = $state('bet.png');
-	$effect(() => {
-		if (disabled) {
-			icon = 'bet_disabled.png';
-		} else {
-			icon = 'bet.png';
-		}
-	});
 </script>
 
 <ButtonBetProvider>
 	{#snippet children({ key, onpress })}
 		<OnHotkey hotkey="Space" {disabled} {onpress} />
 		<Button {...props} {sizes} {onpress} {disabled}>
-			{#snippet children({ center, hovered })}
+			{#snippet children({ center })}
 				<Container {...center}>
 					<Circle diameter={sizes.height * 1.15} anchor={0.5} backgroundColor={BLACK} alpha={0.9} />
-					<UiIconButton
-						{icon}
-						sizes={{ height: sizes.height * 0.8, width: sizes.width * 0.8 }}
+					<Sprite
 						anchor={0.5}
-						{onpress}
-						{disabled}
+						width={sizes.width * 0.8}
+						height={sizes.height * 0.8}
+						key={['spin_default', 'spin_disabled'].includes(key) ? 'bet.png' : 'bet_stop.png'}
+						{...disabled
+							? {
+									alpha: 0.25,
+								}
+							: {}}
 					/>
 				</Container>
 			{/snippet}
