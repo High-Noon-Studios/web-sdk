@@ -52,6 +52,118 @@
 />
 
 <Story
+	name="h"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: {},
+		action: async () => {
+			console.log(JSON.stringify(books[0], null, 2))
+			const index = books.findIndex((book) => book.payoutMultiplier === 0);
+			const data = books[index];
+			data.events = data.events.map(event => {
+				if (event.type === 'reveal') {
+					return {
+						...event,
+						board: [
+              [
+                {
+                  "name": "H1"
+                },
+                {
+                  "name": "H2"
+                },
+                {
+                  "name": "H3"
+                },
+                {
+                  "name": "H4"
+                },
+                {
+                  "name": "H1"
+                }
+              ],
+              [
+                {
+                  "name": "H2"
+                },
+                {
+                  "name": "H3"
+                },
+                {
+                  "name": "H4"
+                },
+                {
+                  "name": "H1"
+                },
+                {
+                  "name": "H2"
+                }
+              ],
+              [
+                {
+                  "name": "H3"
+                },
+                {
+                  "name": "H4"
+                },
+                {
+                  "name": "H1"
+                },
+                {
+                  "name": "H2"
+                },
+                {
+                  "name": "H3"
+                }
+              ],
+              [
+                {
+                  "name": "H4"
+                },
+                {
+                  "name": "H1"
+                },
+                {
+                  "name": "H2"
+                },
+                {
+                  "name": "H3"
+                },
+                {
+                  "name": "H4"
+                }
+              ],
+              [
+                {
+                  "name": "H1"
+                },
+                {
+                  "name": "H2"
+                },
+                {
+                  "name": "H3"
+                },
+                {
+                  "name": "H4"
+                },
+                {
+                  "name": "H1"
+                }
+              ]
+            ]
+          };
+				} else {
+					return event;
+				}
+			});
+			console.log('Running a book at index', index);
+			await playBet({ ...data, state: data.events });
+		},
+	})}
+	{template}
+/>
+
+<Story
 	name="freespin"
 	args={templateArgs({
 		skipLoadingScreen: true,

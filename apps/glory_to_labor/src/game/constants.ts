@@ -132,7 +132,7 @@ export const PORTRAIT_MAIN_SIZES = {
 
 export const HIGH_SYMBOLS = ['H1', 'H2', 'H3', 'H4'];
 
-export const INITIAL_SYMBOL_STATE: SymbolState = 'win';
+export const INITIAL_SYMBOL_STATE: SymbolState = 'land';
 
 const HIGH_SYMBOL_SIZE = 1;
 const SCATTER_SYMBOL_SIZE = 1.5;
@@ -183,10 +183,15 @@ const scatterLand = {
 	sizeRatios: { width: 1, height: 1 },
 }
 
-const h1Static = { type: 'sprite', assetKey: 'H1.png', sizeRatios: { width: HIGH_SYMBOL_SIZE * 1.37 / 2.15, height: HIGH_SYMBOL_SIZE * 2.15 / 2.15 } };
-const h2Static = { type: 'sprite', assetKey: 'H2.png', sizeRatios: { width: HIGH_SYMBOL_SIZE * 1.37 / 2.15, height: HIGH_SYMBOL_SIZE * 2.15 / 2.15 } };
-const h3Static = { type: 'sprite', assetKey: 'H3.png', sizeRatios: { width: HIGH_SYMBOL_SIZE * 1.37 / 2.15, height: HIGH_SYMBOL_SIZE * 2.15 / 2.15 } };
-const h4Static = { type: 'sprite', assetKey: 'H4.png', sizeRatios: { width: HIGH_SYMBOL_SIZE * 1.37 / 2.15, height: HIGH_SYMBOL_SIZE * 2.15 / 2.15 } };
+const h1Land = { type: 'spine', assetKey: 'H1', animationName: 'land', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE }, timeScale: 2 };
+const h2Land = { type: 'spine', assetKey: 'H2', animationName: 'land', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE }, timeScale: 2 };
+const h3Land = { type: 'spine', assetKey: 'H3', animationName: 'land', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE }, timeScale: 2 };
+const h4Land = { type: 'spine', assetKey: 'H4', animationName: 'land', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE }, timeScale: 2 };
+
+const h1Static = { type: 'spine', assetKey: 'H1', animationName: 'static', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
+const h2Static = { type: 'spine', assetKey: 'H2', animationName: 'static', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
+const h3Static = { type: 'spine', assetKey: 'H3', animationName: 'static', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
+const h4Static = { type: 'spine', assetKey: 'H4', animationName: 'static', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
 
 const l1Static = { type: 'sprite', assetKey: 'L1.png', sizeRatios: { width: 1.37 / 2.15, height: 2.15 / 2.15 } };
 const l2Static = { type: 'sprite', assetKey: 'L2.png', sizeRatios: { width: 1.37 / 2.15, height: 2.15 / 2.15 } };
@@ -204,7 +209,7 @@ export const SYMBOL_INFO_MAP = {
 		postWinStatic: h1Static,
 		static: h1Static,
 		spin: h1Static,
-		land: h1Static,
+		land: h1Land,
 	},
 	H2: {
 		explosion,
@@ -212,7 +217,7 @@ export const SYMBOL_INFO_MAP = {
 		postWinStatic: h2Static,
 		static: h2Static,
 		spin: h2Static,
-		land: h2Static,
+		land: h2Land,
 	},
 	H3: {
 		explosion,
@@ -220,7 +225,7 @@ export const SYMBOL_INFO_MAP = {
 		postWinStatic: h3Static,
 		static: h3Static,
 		spin: h3Static,
-		land: h3Static,
+		land: h3Land,
 	},
 	H4: {
 		explosion,
@@ -228,7 +233,7 @@ export const SYMBOL_INFO_MAP = {
 		postWinStatic: h4Static,
 		static: h4Static,
 		spin: h4Static,
-		land: h4Static,
+		land: h4Land,
 	},
 	L1: {
 		explosion,

@@ -37,6 +37,38 @@ export default {
 			scale: 2,
 		},
 	},
+	H1: {
+		type: 'spine',
+		src: {
+			atlas: new URL('../../assets/spines/symbols/main.atlas', import.meta.url).href,
+			skeleton: new URL('../../assets/spines/symbols/h1.json', import.meta.url).href,
+			scale: 1,
+		},
+	},
+	H2: {
+		type: 'spine',
+		src: {
+			atlas: new URL('../../assets/spines/symbols/main.atlas', import.meta.url).href,
+			skeleton: new URL('../../assets/spines/symbols/h2.json', import.meta.url).href,
+			scale: 1,
+		},
+	},
+	H3: {
+		type: 'spine',
+		src: {
+			atlas: new URL('../../assets/spines/symbols/main.atlas', import.meta.url).href,
+			skeleton: new URL('../../assets/spines/symbols/h3.json', import.meta.url).href,
+			scale: 1,
+		},
+	},
+	H4: {
+		type: 'spine',
+		src: {
+			atlas: new URL('../../assets/spines/symbols/main.atlas', import.meta.url).href,
+			skeleton: new URL('../../assets/spines/symbols/h4.json', import.meta.url).href,
+			scale: 1,
+		},
+	},
 	reelsFrame: {
 		type: 'sprite',
 		src: new URL('../../assets/sprites/reelsFrame/reelsFrame.png', import.meta.url).href,

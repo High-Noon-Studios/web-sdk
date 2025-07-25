@@ -1,0 +1,31 @@
+main.webp
+size:1699,256
+filter:Linear,Linear
+pma:true
+scale:0.125
+Asset 77
+bounds:1224,3,167,253
+offsets:0,0,167,256
+Asset 89
+bounds:1392,0,153,256
+Asset 90
+bounds:1546,0,153,256
+H1 Frame_2
+bounds:1039,4,184,252
+offsets:1,3,190,256
+H2 Frame
+bounds:669,4,184,252
+offsets:1,3,190,256
+H3 Frame
+bounds:483,5,185,251
+offsets:2,3,190,256
+H4 Frame
+bounds:854,4,184,252
+offsets:1,3,190,256
+PNG/H1 Radial Inner_1
+bounds:0,0,256,256
+H1 Radial Inner_1
+bounds:0,0,256,256
+lenin
+bounds:257,29,225,227
+offsets:14,21,254,256

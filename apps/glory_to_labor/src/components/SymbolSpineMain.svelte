@@ -21,12 +21,13 @@
 	y={props.y}
 	key={props.symbolInfo.assetKey}
 	height={SYMBOL_SIZE * props.symbolInfo.sizeRatios.height}
+	width={SYMBOL_SIZE * props.symbolInfo.sizeRatios.width}
 >
 	<SpineTrack
 		loop={props.loop}
 		trackIndex={0}
 		animationName={props.symbolInfo.animationName}
-		timeScale={stateBetDerived.timeScale()}
+		timeScale={stateBetDerived.timeScale() * (props.symbolInfo.timeScale ?? 1)}
 		listener={props.listener}
 	/>
 </SpineProvider>

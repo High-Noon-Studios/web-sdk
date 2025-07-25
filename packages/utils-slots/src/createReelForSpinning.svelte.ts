@@ -240,9 +240,9 @@ export function createReelForSpinning<TRawSymbol extends object, TSymbolState ex
 
 		reelState.motion = 'bouncing';
 		onSpinFinishing();
+		updateAllReelSymbolState('land');
 		await removePaddingAndBounceBack();
 		reelState.motion = 'stopped';
-		updateAllReelSymbolState('land');
 	};
 
 	const fastSpin = () =>
