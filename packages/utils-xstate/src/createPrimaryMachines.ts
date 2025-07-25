@@ -1,10 +1,9 @@
-import { fromPromise } from 'xstate';
+import { requestBet, requestEndRound, requestForceResult } from 'rgs-requests';
+import { stateBet, stateForce, stateForceDerived, stateModal, stateUrlDerived } from 'state-shared';
 
 import { API_AMOUNT_MULTIPLIER } from 'constants-shared/bet';
-import { stateBet, stateUrlDerived, stateForce, stateForceDerived, stateModal } from 'state-shared';
-import { requestBet, requestForceResult, requestEndRound } from 'rgs-requests';
-
 import type { BaseBet } from './types';
+import { fromPromise } from 'xstate';
 
 const handleRequestBet = async ({ onError }: { onError: () => void }) => {
 	try {
@@ -111,6 +110,7 @@ function createPrimaryMachines<TBet extends BaseBet>(options: Options<TBet>) {
 		bonusWin: {
 			newGame: async () => undefined,
 			endGame: async () => {
+				stateBet.activeBetModeKey = 'base';
 				const data = await handleRequestEndRound();
 				if (data?.balance) {
 					handleUpdateBalance({ balanceAmountFromApi: data.balance.amount });

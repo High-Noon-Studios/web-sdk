@@ -1,14 +1,13 @@
-import _ from 'lodash';
-
-import { stateBet } from 'state-shared';
-import { checkIsMultipleRevealEvents } from 'utils-book';
-import { createPrimaryMachines, createIntermediateMachines, createGameActor } from 'utils-xstate';
+import { convertTorResumableBet, playBet } from './utils';
+import { createGameActor, createIntermediateMachines, createPrimaryMachines } from 'utils-xstate';
+import { stateGame, stateGameDerived } from './stateGame.svelte';
 
 import type { Bet } from './typesBookEvent';
-import { stateXstateDerived } from './stateXstate';
-import { playBet, convertTorResumableBet } from './utils';
-import { stateGame, stateGameDerived } from './stateGame.svelte';
+import _ from 'lodash';
+import { checkIsMultipleRevealEvents } from 'utils-book';
 import config from './config';
+import { stateBet } from 'state-shared';
+import { stateXstateDerived } from './stateXstate';
 
 const primaryMachines = createPrimaryMachines<Bet>({
 	onResumeGameActive: (lastBetData) => convertTorResumableBet(lastBetData),
