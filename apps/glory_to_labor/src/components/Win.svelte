@@ -20,6 +20,7 @@
 	import PressToContinue from './PressToContinue.svelte';
 	import { SYMBOL_SIZE } from '../game/constants';
 	import { getContext } from '../game/context';
+	import { stateBet } from 'state-shared';
 
 	const context = getContext();
 
@@ -40,7 +41,7 @@
 	});
 </script>
 
-<FadeContainer {show}>
+<FadeContainer {show} duration={stateBet.isTurbo ? 0 : undefined}>
 	{#if winLevelData}
 		{@const isBigWin = winLevelData.type === 'big'}
 		{@const duration = winLevelData.presentDuration}

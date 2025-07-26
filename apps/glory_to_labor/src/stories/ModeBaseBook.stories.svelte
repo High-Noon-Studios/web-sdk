@@ -179,3 +179,20 @@
 	})}
 	{template}
 />
+
+<Story
+	name="freespin_big"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: {},
+		action: async () => {
+			const index = books.findIndex((book) =>
+				book.events.some((event) => event.type === 'freeSpinTrigger') && book.payoutMultiplier > 10000,
+			);
+			const data = books[index];
+			console.log('Running a book at index', index);
+			await playBet({ ...data, state: data.events });
+		},
+	})}
+	{template}
+/>

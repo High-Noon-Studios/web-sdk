@@ -11,7 +11,7 @@
 
 	const context = getContext();
 	const SPINE_SCALE = { width: 0.62, height: 0.66 };
-	const SPRITE_SCALE = { width: 1, height: 0.69 };
+	const SPRITE_SCALE = { width: 1, height: 0.6933203125 };
 	const POSITION_ADJUSTMENT = 1;
 	const BOARD_SIZE_ADJUSTMENT_X = 1.1;
   const BOARD_SIZE_ADJUSTMENT_Y = 1.13;
@@ -52,7 +52,7 @@
 		x={context.stateGameDerived.boardLayout().x * POSITION_ADJUSTMENT}
 		y={context.stateGameDerived.boardLayout().y * POSITION_ADJUSTMENT}
 		width={context.stateGameDerived.boardLayout().width * 0.55}
-		height={context.stateGameDerived.boardLayout().height * 0.6}
+		height={context.stateGameDerived.boardLayout().height * 0.65}
 	>
 		<SpineTrack
 			trackIndex={0}

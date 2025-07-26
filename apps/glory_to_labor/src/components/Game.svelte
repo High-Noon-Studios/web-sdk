@@ -27,6 +27,8 @@
 	import Transition from './Transition.svelte';
 	import StickyBoard from './StickyBoard.svelte';
 	import Banner from './Banner.svelte';
+	import MarxLasers from './MarxLasers.svelte';
+	import MarxLasersProvider from './MarxLasersProvider.svelte';
 
 	const context = getContext();
 
@@ -61,56 +63,62 @@
 		<Background  />
 	</Container>
 
-		{#if context.stateLayout.showLoadingScreen}
-			<LoadingScreen onloaded={() => (context.stateLayout.showLoadingScreen = false)} />
-		{:else}
-			<ResumeBet />
-			<!--
-				The reason why <Sound /> is rendered after clicking the loading screen:
-				"Autoplay with sound is allowed if: The user has interacted with the domain (click, tap, etc.)."
-				Ref: https://developer.chrome.com/blog/autoplay
-			-->
-			<Sound />
+	{#if context.stateLayout.showLoadingScreen}
+		<LoadingScreen onloaded={() => (context.stateLayout.showLoadingScreen = false)} />
+	{:else}
+		<ResumeBet />
+		<!--
+			The reason why <Sound /> is rendered after clicking the loading screen:
+			"Autoplay with sound is allowed if: The user has interacted with the domain (click, tap, etc.)."
+			Ref: https://developer.chrome.com/blog/autoplay
+		-->
+		<Sound />
 
-			<MainContainer>
-				<BoardFrame />
-			</MainContainer>
+		<MainContainer>
+			<BoardFrame />
+		</MainContainer>
 
-			<MainContainer>
-				<Board />
-				<Anticipations />
-					<Banner />
-				<StickyBoard />
-			</MainContainer>
+		<MainContainer>
+			<Board />
+			<Anticipations />
+				<Banner />
+			<StickyBoard />
 
-			<UI>
-				{#snippet gameName()}
-					<UiGameName name="Glory to Labor!" />
-				{/snippet}
-				{#snippet logo()}
-					<Text
-						anchor={{ x: 1, y: 0 }}
-						text="Glory to Labor!"
-						style={{
-							fontFamily: 'Funnel Sans',
-							fontSize: REM * 1.5,
-							fontWeight: '600',
-							lineHeight: REM * 2,
-							fill: 0xffffff,
-						}}
-					/>
-				{/snippet}
-			</UI>
-			<Win />
-			<FreeSpinIntro />
-			{#if ['desktop', 'landscape'].includes(context.stateLayoutDerived.layoutType())}
-				<FreeSpinCounter />
-			{/if}
-			<FreeSpinOutro />
-			<Transition />
+		</MainContainer>
 
-			<!-- <I18nTest /> -->
+		<MainContainer>
+			<MarxLasersProvider height={300}>
+				<MarxLasers />
+			</MarxLasersProvider>
+		</MainContainer>
+
+		<UI>
+			{#snippet gameName()}
+				<UiGameName name="Glory to Labor!" />
+			{/snippet}
+			{#snippet logo()}
+				<Text
+					anchor={{ x: 1, y: 0 }}
+					text="Glory to Labor!"
+					style={{
+						fontFamily: 'Funnel Sans',
+						fontSize: REM * 1.5,
+						fontWeight: '600',
+						lineHeight: REM * 2,
+						fill: 0xffffff,
+					}}
+				/>
+			{/snippet}
+		</UI>
+		<Win />
+		<FreeSpinIntro />
+		{#if ['desktop', 'landscape'].includes(context.stateLayoutDerived.layoutType())}
+			<FreeSpinCounter />
 		{/if}
+		<FreeSpinOutro />
+		<Transition />
+		<!-- <I18nTest /> -->
+	{/if}
 </App>
 
 <Modals>

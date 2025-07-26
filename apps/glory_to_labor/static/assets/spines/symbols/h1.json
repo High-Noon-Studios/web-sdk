@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "1KMCPK39Vgo",
+	"hash": "fnbyMejF4nU",
 	"spine": "4.2.43",
 	"x": -760.5,
 	"y": -1024,
@@ -158,6 +158,7 @@
 			}
 		}
 	},
-	"static": {}
+	"static": {},
+	"win": {}
 }
 }

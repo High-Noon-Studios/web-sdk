@@ -69,9 +69,17 @@ export default {
 			scale: 1,
 		},
 	},
-	reels_frame: {
+	marx: {
+		type: 'spine',
+		src: {
+			atlas: new URL('../../assets/spines/symbols/main.atlas', import.meta.url).href,
+			skeleton: new URL('../../assets/spines/symbols/marx.json', import.meta.url).href,
+			scale: 1,
+		},
+	},
+	laser: {
 		type: 'sprite',
-		src: new URL('../../assets/sprites/reelsFrame/reels_frame.json', import.meta.url).href,
+		src: new URL('../../assets/sprites/laser/laser.png', import.meta.url).href,
 	},
 	reelsFrame: {
 		type: 'sprite',

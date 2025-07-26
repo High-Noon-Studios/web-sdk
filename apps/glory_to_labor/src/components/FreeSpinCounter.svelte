@@ -50,7 +50,7 @@
 		freeSpinCounterShow: () => (show = true),
 		freeSpinCounterHide: () => (show = false),
 		freeSpinCounterUpdate: (emitterEvent) => {
-			if (emitterEvent.current !== undefined) current = emitterEvent.current;
+			if (emitterEvent.current !== undefined) current = Math.min(emitterEvent.current, emitterEvent.total);
 			if (emitterEvent.total !== undefined) total = emitterEvent.total;
 		},
 	});
