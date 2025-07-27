@@ -207,21 +207,13 @@ const wStatic = { type: 'sprite', assetKey: 'Wild.png', sizeRatios: { width: 1.1
 const marxLookAround = { type: 'spine', assetKey: 'marx', animationName: 'look_around', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
 
 export const SYMBOL_INFO_MAP = {
-	// H1: {
-	// 	explosion,
-	// 	win: h1Static,
-	// 	postWinStatic: h1Static,
-	// 	static: h1Static,
-	// 	spin: h1Static,
-	// 	land: h1Land,
-	// },
 	H1: {
 		explosion,
-		win: marxStatic,
-		postWinStatic: marxLookAround,
-		static: marxStatic,
-		spin: marxStatic,
-		land: marxLand,
+		win: h1Static,
+		postWinStatic: h1Static,
+		static: h1Static,
+		spin: h1Static,
+		land: h1Land,
 	},
 	H2: {
 		explosion,
