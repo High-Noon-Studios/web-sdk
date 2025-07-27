@@ -40,12 +40,24 @@
 	let laserLengthTween = new Tween(0);
 
 	const calculateLookAtTargetSpineCoordinates = (target: { x: number, y: number }, strength: number) => {
-		const dx = (target.x - lookAtBonePositionPixi.x) * strength;
-		const dy = (lookAtBonePositionPixi.y - target.y) * strength;
+		const dx = (target.x - lookAtBonePositionPixi.x);
+		const dy = (lookAtBonePositionPixi.y - target.y);
+
+		// Calculate distance and angle
+		const distance = Math.sqrt(dx * dx + dy * dy);
+		const angle = Math.atan2(dy, dx);
+
+		// Scale distance by strength, with max distance of 200 * strength
+		const maxDistance = 200 * Math.abs(strength);
+		const scaledDistance = Math.min(distance, maxDistance);
+
+		// Convert back to x,y coordinates
+		const scaledDx = Math.cos(angle) * scaledDistance * Math.sign(strength);
+		const scaledDy = Math.sin(angle) * scaledDistance * Math.sign(strength);
 
 		return {
-			x: dx + lookAtBoneCenterSpine.x,
-			y: dy + lookAtBoneCenterSpine.y
+			x: scaledDx + lookAtBoneCenterSpine.x,
+			y: scaledDy + lookAtBoneCenterSpine.y
 		}
 	}
 
