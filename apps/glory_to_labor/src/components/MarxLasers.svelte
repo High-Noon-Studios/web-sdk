@@ -11,7 +11,7 @@
 	import LaserImpactParticles from './LaserImpactParticles.svelte';
 	import { FadeContainer } from 'components-pixi';
 
-	const SPEED_SCALE = 0.5;
+	const SPEED_SCALE = 0.6;
 	const context = getContext();
 
 	const app = context.stateApp.pixiApplication!;
@@ -26,6 +26,9 @@
 	})));
 
 	const marxSpine = getContextSpine();
+	const clip = marxSpine.skeleton.findSlot('clip');
+	clip?.setAttachment(null);
+
 	const lookAt = marxSpine.skeleton.findBone('look_at')!;
 
 	const rightEye = marxSpine.skeleton.findBone('right_eye')!;
@@ -82,17 +85,17 @@
 
 	const fireLasers = async ({ target }: { target: { x: number, y: number } }) => {
 		// wind back, charge lasers
-		await lookAtTarget({ target, duration: 1000 * SPEED_SCALE, easing: cubicOut, strength: -0.5})
+		await lookAtTarget({ target, duration: 1000 * SPEED_SCALE, easing: cubicOut, strength: -0.1})
 
 		// fire lasers - inital
-		lookAtTarget({ target, duration: 500 * SPEED_SCALE, easing: cubicIn, strength: 0.8}),
+		lookAtTarget({ target, duration: 500 * SPEED_SCALE, easing: cubicIn, strength: 0.6}),
 		await Promise.all([
 			laserLengthTween.set(1, { duration: 200 * SPEED_SCALE, easing: cubicIn }),
 		]);
 
 		// once they connect to the target, emit particles and press head through
 		emitParticles = true;
-		await lookAtTarget({ target, duration: 1000 * SPEED_SCALE, strength: 1, easing: linear });
+		await lookAtTarget({ target, duration: 3000 * SPEED_SCALE, strength: 1, easing: linear });
 
 		isLaserShrinking = true;
 		emitParticles = false;
@@ -110,7 +113,7 @@
 		while (true) {
 			currentTarget = targets[i];
 			await fireLasers({ target: currentTarget });
-			await new Promise(resolve => setTimeout(resolve, 500 * SPEED_SCALE));
+			await new Promise(resolve => setTimeout(resolve, 100 * SPEED_SCALE));
 			i++;
 			if (i >= targets.length) {
 				i = 0;
@@ -149,11 +152,6 @@
 				x: marxX + lookAt.x * marxSpine.scale.x,
 				y: marxY - lookAt.y * marxSpine.scale.y
 			}
-
-			console.log(lookAtBonePositionPixi);
-
-
-
 		});
 
 		app.ticker.add(() => {
@@ -166,14 +164,14 @@
 	})
 </script>
 
-<Graphics
+<!-- <Graphics
 	draw={(g) => {
 		g.circle(0, 0, 10);
 		g.fill({ color: 0x00ff00 });
 	}}
 	{...lookAtBonePositionPixi}
 	zIndex={100}
-/>
+/> -->
 
 <Laser
 	key="laser"
