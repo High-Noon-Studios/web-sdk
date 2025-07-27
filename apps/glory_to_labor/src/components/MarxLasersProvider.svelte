@@ -15,7 +15,7 @@
 </script>
 
 <SpineProvider
-	x={board.x + board.width / 2 - 300 * 0.69}
+	x={board.x + board.width * 0.69}
 	y={board.y}
 	key="marx"
 	height={props.height}

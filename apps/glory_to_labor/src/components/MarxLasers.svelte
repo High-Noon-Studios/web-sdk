@@ -11,6 +11,7 @@
 	import LaserImpactParticles from './LaserImpactParticles.svelte';
 	import { FadeContainer } from 'components-pixi';
 
+	const SPEED_SCALE = 0.5;
 	const context = getContext();
 
 	const app = context.stateApp.pixiApplication!;
@@ -38,9 +39,9 @@
 	let lookAtTween = new Tween(symbolPositions[0]);
 	let laserLengthTween = new Tween(0);
 
-	const calculateLookAtTargetSpineCoordinates = (target: { x: number, y: number }) => {
-		const dx = target.x - lookAtBonePositionPixi.x;
-		const dy = lookAtBonePositionPixi.y - target.y;
+	const calculateLookAtTargetSpineCoordinates = (target: { x: number, y: number }, strength: number) => {
+		const dx = (target.x - lookAtBonePositionPixi.x) * strength;
+		const dy = (lookAtBonePositionPixi.y - target.y) * strength;
 
 		return {
 			x: dx + lookAtBoneCenterSpine.x,
@@ -59,35 +60,35 @@
 		easing?: EasingFunction,
 		strength?: number
 	}) => {
-		const lookAtTargetSpineCoordinates = calculateLookAtTargetSpineCoordinates({ x, y });
-		return lookAtTween.set({ x: lookAtTargetSpineCoordinates.x, y: lookAtTargetSpineCoordinates.y }, { duration, easing });
+		const lookAtTargetSpineCoordinates = calculateLookAtTargetSpineCoordinates({ x: x, y: y }, strength);
+		return lookAtTween.set({ x: lookAtTargetSpineCoordinates.x, y: lookAtTargetSpineCoordinates.y }, { duration: duration * SPEED_SCALE, easing });
 	}
 
 	const resetLookAtTarget = async ({ duration = 250 }: { duration?: number }) => {
-		return lookAtTween.set({ x: lookAtBoneCenterSpine.x, y: lookAtBoneCenterSpine.y }, { duration, easing: cubicOut });
+		return lookAtTween.set({ x: lookAtBoneCenterSpine.x, y: lookAtBoneCenterSpine.y }, { duration: duration * SPEED_SCALE, easing: cubicOut });
 	}
 
 	const fireLasers = async ({ target }: { target: { x: number, y: number } }) => {
 		// wind back, charge lasers
-		await lookAtTarget({ target, duration: 1000, easing: cubicOut, strength: -0.5})
+		await lookAtTarget({ target, duration: 1000 * SPEED_SCALE, easing: cubicOut, strength: -0.5})
 
 		// fire lasers - inital
-		lookAtTarget({ target, duration: 500, easing: cubicIn, strength: 0.8}),
+		lookAtTarget({ target, duration: 500 * SPEED_SCALE, easing: cubicIn, strength: 0.8}),
 		await Promise.all([
-			laserLengthTween.set(1, { duration: 200, easing: cubicIn }),
+			laserLengthTween.set(1, { duration: 200 * SPEED_SCALE, easing: cubicIn }),
 		]);
 
 		// once they connect to the target, emit particles and press head through
 		emitParticles = true;
-		await lookAtTarget({ target, duration: 1000, strength: 1, easing: linear });
+		await lookAtTarget({ target, duration: 1000 * SPEED_SCALE, strength: 1, easing: linear });
 
 		isLaserShrinking = true;
 		emitParticles = false;
 
 		// When anchor is 1, position the sprite at the target location
 		// This makes the laser shrink from eyes to target
-		await laserLengthTween.set(0, { duration: 200, easing: cubicOut });
-		await resetLookAtTarget({ duration: 500 }),
+		await laserLengthTween.set(0, { duration: 200 * SPEED_SCALE, easing: cubicOut });
+		await resetLookAtTarget({ duration: 500 * SPEED_SCALE }),
 
 		isLaserShrinking = false;
 	}
@@ -97,7 +98,7 @@
 		while (true) {
 			currentTarget = targets[i];
 			await fireLasers({ target: currentTarget });
-			await new Promise(resolve => setTimeout(resolve, 500));
+			await new Promise(resolve => setTimeout(resolve, 500 * SPEED_SCALE));
 			i++;
 			if (i >= targets.length) {
 				i = 0;
@@ -128,7 +129,6 @@
 	let marxY = $state(marxSpine.y);
 
 	onMount(() => {
-
 		app.ticker.addOnce(() => {
 			lookAtBoneCenterSpine = { x: lookAt.x, y: lookAt.y };
 			marxX = marxSpine.x;
@@ -177,7 +177,7 @@
 	length={laserLengthTween.current}
 />
 
-<FadeContainer show={emitParticles} duration={200}>
+<FadeContainer show={emitParticles} duration={200 * SPEED_SCALE}>
 	<LaserImpactParticles
 		{...currentTarget}
 	/>
