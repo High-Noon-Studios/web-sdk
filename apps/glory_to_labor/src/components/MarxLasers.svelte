@@ -33,6 +33,9 @@
 
 	const rightEye = marxSpine.skeleton.findBone('right_eye')!;
 	const leftEye = marxSpine.skeleton.findBone('left_eye')!;
+	const frame = marxSpine.skeleton.findSlot('frame')!;
+	frame.setAttachment(null);
+
 	const rightEyePosition = $state({ x: 0, y: 0 });
 	const leftEyePosition = $state({ x: 0, y: 0 });
 
