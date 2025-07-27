@@ -263,5 +263,9 @@ export default {
 		type: 'sprites',
 		src: new URL('../../assets/sprites/ui/icons.json', import.meta.url).href,
 		preload: true,
-	}
+	},
+	particle: {
+		type: 'sprite',
+		src: new URL('../../assets/sprites/particles/particle.png', import.meta.url).href,
+	},
 } as const;
