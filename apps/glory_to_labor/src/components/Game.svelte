@@ -48,7 +48,7 @@
 		lineContrast: 0.01,
 		seed: 1,
 		vignetting: 0.4,
-		vignettingAlpha: 1,
+		vignettingAlpha: 0.5,
 		vignettingBlur: 0.3,
 	});
 </script>
@@ -87,7 +87,7 @@
 		</MainContainer>
 
 		<MainContainer>
-			<MarxLasersProvider height={300}>
+			<MarxLasersProvider height={600}>
 				<MarxLasers />
 			</MarxLasersProvider>
 		</MainContainer>

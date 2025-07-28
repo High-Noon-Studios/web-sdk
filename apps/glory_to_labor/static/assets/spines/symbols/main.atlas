@@ -1,36 +1,44 @@
 main.webp
-size:2031,256
+size:1525,442
 filter:Linear,Linear
 pma:true
 scale:0.125
 Asset 77
-bounds:1409,3,167,253
+bounds:1015,22,167,253
 offsets:0,0,167,256
+rotate:90
 Asset 89
-bounds:1577,0,153,256
+bounds:1110,289,153,256
+rotate:90
 Asset 90
-bounds:1731,0,153,256
+bounds:1367,186,153,256
 Asset 96
-bounds:669,4,184,252
+bounds:509,1,184,252
 offsets:1,3,190,256
+rotate:90
 H1 Frame_2
-bounds:1224,4,184,252
+bounds:925,190,184,252
 offsets:1,3,190,256
 H2 Frame
-bounds:854,4,184,252
+bounds:740,190,184,252
 offsets:1,3,190,256
 H3 Frame
-bounds:483,5,185,251
+bounds:257,0,185,251
 offsets:2,3,190,256
+rotate:90
 H4 Frame
-bounds:1039,4,184,252
+bounds:762,5,184,252
 offsets:1,3,190,256
+rotate:90
 PNG/H1 Radial Inner_1
-bounds:0,0,256,256
+bounds:257,186,256,256
 H1 Radial Inner_1
-bounds:0,0,256,256
+bounds:257,186,256,256
 lenin
-bounds:257,29,225,227
+bounds:514,215,225,227
 offsets:14,21,254,256
 marx
-bounds:1885,0,146,256
+bounds:1269,39,146,256
+rotate:90
+marx_complete
+bounds:0,19,256,423

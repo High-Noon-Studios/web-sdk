@@ -73,7 +73,7 @@ export default {
 		type: 'spine',
 		src: {
 			atlas: new URL('../../assets/spines/symbols/main.atlas', import.meta.url).href,
-			skeleton: new URL('../../assets/spines/symbols/marx.json', import.meta.url).href,
+			skeleton: new URL('../../assets/spines/symbols/marx_hero.json', import.meta.url).href,
 			scale: 1,
 		},
 	},
