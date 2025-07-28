@@ -268,4 +268,12 @@ export default {
 		type: 'sprite',
 		src: new URL('../../assets/sprites/particles/particle.png', import.meta.url).href,
 	},
+	baseBackground: {
+		type: 'sprite',
+		src: new URL('../../assets/sprites/background/base.png', import.meta.url).href,
+	},
+	bonusBackground: {
+		type: 'sprite',
+		src: new URL('../../assets/sprites/background/bonus.png', import.meta.url).href,
+	},
 } as const;

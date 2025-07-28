@@ -87,7 +87,7 @@
 		</MainContainer>
 
 		<MainContainer>
-			<MarxLasersProvider height={600}>
+			<MarxLasersProvider height={800}>
 				<MarxLasers />
 			</MarxLasersProvider>
 		</MainContainer>

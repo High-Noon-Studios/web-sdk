@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Graphics, Rectangle, SpineProvider, SpineTrack, Container } from 'pixi-svelte';
+	import { Graphics, Rectangle, SpineProvider, SpineTrack, Container, Sprite } from 'pixi-svelte';
 	import { FadeContainer } from 'components-pixi';
 	import { SECOND } from 'constants-shared/time';
 
@@ -32,9 +32,31 @@
 
 <Rectangle {...context.stateLayoutDerived.canvasSizes()} backgroundColor={COLORS.cream} zIndex={-3} />
 
-<Container x={width / 2} y={height / 2} rotation={rotation.current} scale={scale.current}>
-	<PropagandaBurst wedges={40} innerR={0} outerR={size} color={0x8f1b1b} />
-</Container>
+{#if showBaseBackground}
+	<Container x={width / 2} y={height / 2} rotation={rotation.current} scale={scale.current}>
+		<PropagandaBurst wedges={40} innerR={0} outerR={size} color={0x8f1b1b} />
+	</Container>
+{/if}
+
+<!-- <FadeContainer show={showBaseBackground} duration={SECOND} x={width / 2} y={height / 2}>
+	<Sprite
+		anchor={0.5}
+		pivot={0.5}
+		key="baseBackground"
+		{...context.stateLayoutDerived.canvasSizes()}
+	/> -->
+	<!-- <PropagandaBurst wedges={40} innerR={0} outerR={size} color={0x8f1b1b} /> -->
+<!-- </FadeContainer> -->
+
+<FadeContainer show={showFeatureBackground} duration={SECOND} zIndex={-2} x={width / 2} y={height / 2}>
+	<Sprite
+		anchor={0.5}
+		pivot={0.5}
+		key="bonusBackground"
+		{...context.stateLayoutDerived.canvasSizes()}
+	/>
+	<!-- <PropagandaBurst wedges={40} innerR={0} outerR={size} color={0x8f1b1b} /> -->
+</FadeContainer>
 
 <!-- <FadeContainer show={showBaseBackground} duration={SECOND} zIndex={-2}>
 	<SpineProvider key="backgroundAnimation" {...backgroundProps}>

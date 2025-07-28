@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { getContextSpine, Graphics, SpineTrack } from 'pixi-svelte';
+	import { getContextSpine } from 'pixi-svelte';
 	import { getContext } from '../game/context';
 	import { onMount } from 'svelte';
 	import {  } from '@esotericsoftware/spine-pixi-v8';
 	import { Tween } from 'svelte/motion';
-	import { cubicIn, cubicInOut, cubicOut, linear } from 'svelte/easing';
+	import { cubicIn, cubicInOut, cubicOut, expoInOut, sineInOut  } from 'svelte/easing';
 	import type { EasingFunction } from 'svelte/transition';
 	import { getSymbolX } from '../game/utils';
 	import Laser from './Laser.svelte';
@@ -28,18 +28,45 @@
 	const marxSpine = getContextSpine();
 
 	const lookAt = marxSpine.skeleton.findBone('look_at')!;
-
 	const rightEye = marxSpine.skeleton.findBone('right_eye')!;
 	const leftEye = marxSpine.skeleton.findBone('left_eye')!;
 
 	const rightEyePosition = $state({ x: 0, y: 0 });
 	const leftEyePosition = $state({ x: 0, y: 0 });
 
+	let isIdle = $state(true);
 	let emitParticles = $state(false);
 	let isLaserShrinking = $state(false);
 	let currentTarget = $state(symbolPositions[0]);
+	let rootTween = new Tween({x: 0, y: 0});
 	let lookAtTween = new Tween({x: 0, y: 0, rotation: 0});
 	let laserLengthTween = new Tween(0);
+
+	const startIdleAnimation = async () => {
+		isIdle = true;
+		// Create a continuous up and down movement
+		const animateIdle = async () => {
+			if (!isIdle) return;
+
+			await Promise.all([
+				lookAtTween.set({ x: lookAtBoneCenterSpine.x, y: lookAtBoneCenterSpine.y - 50, rotation: 0 }, { duration: 3000 * SPEED_SCALE, easing: sineInOut }),
+				rootTween.set({x: 0, y: 0}, { duration: 2500 * SPEED_SCALE, easing: sineInOut })
+			]);
+			if (isIdle) {
+				await Promise.all([
+					lookAtTween.set({ x: lookAtBoneCenterSpine.x, y: lookAtBoneCenterSpine.y, rotation: 0 }, { duration: 3000 * SPEED_SCALE, easing: sineInOut }),
+					rootTween.set({x: 0, y: 25}, { duration: 2500 * SPEED_SCALE, easing: sineInOut })
+				]);
+				animateIdle();
+			}
+		};
+
+		animateIdle();
+	};
+
+	const stopIdleAnimation = () => {
+		isIdle = false;
+	};
 
 	const calculateLookAtTargetSpineCoordinates = (target: { x: number, y: number }, strength: number) => {
 		const dx = (target.x - lookAtBonePositionPixi.x);
@@ -76,12 +103,14 @@
 		easing?: EasingFunction,
 		strength?: number
 	}) => {
+		stopIdleAnimation();
 		const lookAtTargetSpineCoordinates = calculateLookAtTargetSpineCoordinates({ x: x, y: y }, strength);
 		return lookAtTween.set({ x: lookAtTargetSpineCoordinates.x, y: lookAtTargetSpineCoordinates.y, rotation }, { duration: duration * SPEED_SCALE, easing });
 	}
 
 	const resetLookAtTarget = async ({ duration = 250 }: { duration?: number }) => {
 		await lookAtTween.set({ x: lookAtBoneCenterSpine.x, y: lookAtBoneCenterSpine.y, rotation: 0 }, { duration: duration * SPEED_SCALE, easing: cubicOut });
+		startIdleAnimation();
 	}
 
 	const fireLasers = async ({ target }: { target: { x: number, y: number } }) => {
@@ -112,7 +141,7 @@
 			await fireLasers({ target: currentTarget });
 		}
 
-		await resetLookAtTarget({ duration: 1000 * SPEED_SCALE });
+		await resetLookAtTarget({ duration: 2000 * SPEED_SCALE });
 	}
 
 	const updateEyePositions = () => {
@@ -131,6 +160,9 @@
 		lookAt.x = lookAtTween.current.x;
 		lookAt.y = lookAtTween.current.y;
 		lookAt.rotation = lookAtTween.current.rotation;
+
+		marxSpine.skeleton.findBone('root')!.x = rootTween.current.x;
+		marxSpine.skeleton.findBone('root')!.y = rootTween.current.y;
 	}
 
 	let lookAtBoneCenterSpine = { x: 0, y: 0 };
