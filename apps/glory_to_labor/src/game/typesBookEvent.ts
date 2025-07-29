@@ -96,6 +96,12 @@ type BookEventIncreaseWildMult = {
 	symbols: StickySymbolWin[];
 };
 
+type BookEventMarxTrigger = {
+	index: number;
+	type: 'marxTrigger';
+	positions: Position[];
+};
+
 export type BookEvent =
 	| BookEventReveal
 	| BookEventWinInfo
@@ -110,7 +116,8 @@ export type BookEvent =
 	// customised
 	| BookEventCreateBonusSnapshot
 	| BookEventFlipWilds
-	| BookEventIncreaseWildMult;
+	| BookEventIncreaseWildMult
+	| BookEventMarxTrigger;
 
 export type Bet = BetType<BookEvent>;
 export type BookEventOfType<T> = Extract<BookEvent, { type: T }>;

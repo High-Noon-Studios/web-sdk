@@ -30,6 +30,7 @@
 		boardShow: () => (show = true),
 		boardHide: () => (show = false),
 		boardWithAnimateSymbols: async ({ symbolPositions }) => {
+			console.log(JSON.stringify(symbolPositions, null, 2))
 			const getPromises = () =>
 				symbolPositions.map(async (position) => {
 					if (

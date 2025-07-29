@@ -1,5 +1,5 @@
 main.webp
-size:1962,1252
+size:1969,1252
 filter:Linear,Linear
 pma:true
 scale:0.25
@@ -47,10 +47,10 @@ rotate:90
 marx_complete
 bounds:0,406,512,846
 particles
-bounds:1314,386,87,81
+bounds:508,43,87,81
 offsets:30,8,126,112
 radial
-bounds:1403,421,45,46
+bounds:1924,135,45,46
 offsets:20,22,84,88
 radial1
 bounds:1782,183,156,158
@@ -58,3 +58,12 @@ offsets:13,16,185,186
 radial2
 bounds:1782,47,140,134
 offsets:14,25,170,170
+rays1
+bounds:1944,1221,19,31
+offsets:20,18,68,68
+rays2
+bounds:1782,15,20,30
+offsets:29,17,68,68
+sparkle
+bounds:1314,374,94,93
+offsets:8,4,105,97

@@ -2,6 +2,7 @@
 	import type { StickySymbolWin } from '../game/types';
 
 	export type EmitterEventMarxLasers =
+	  | { type: 'marxTrigger' }
 		| { type: 'flipWilds'; symbols: StickySymbolWin[] }
 		| { type: 'increaseWildMult'; symbols: StickySymbolWin[] }
 </script>
@@ -149,7 +150,7 @@
 		isLaserShrinking = false;
 	}
 
-	const fireLasersAtTargets = async (targets: { x: number, y: number }[]) => {
+	const fireLasersAtTargets = async (targets: { x: number, y: number, reel: number, row: number }[]) => {
 		for (const target of targets) {
 			currentTarget = target;
 			await fireLasers({ target: currentTarget });
@@ -211,7 +212,7 @@
 				await fireLasersAtTargets([getSymbolPosition(symbol)]);
 				context.eventEmitter.broadcastAsync({ type: 'stickyBoardNew', stickySymbols: [symbol] });
 			}
-		}
+		},
 	});
 </script>
 

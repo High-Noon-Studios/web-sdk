@@ -189,6 +189,8 @@ const h3Land = { type: 'spine', assetKey: 'H3', animationName: 'land', sizeRatio
 const h4Land = { type: 'spine', assetKey: 'H4', animationName: 'land', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE }, timeScale: 2 };
 const kmLand = { type: 'spine', assetKey: 'KM', animationName: 'land', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE }, timeScale: 2 };
 
+const kmWin = { type: 'spine', assetKey: 'KM', animationName: 'win', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE }, timeScale: 2 };
+
 const h1Static = { type: 'spine', assetKey: 'H1', animationName: 'static', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
 const h2Static = { type: 'spine', assetKey: 'H2', animationName: 'static', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
 const h3Static = { type: 'spine', assetKey: 'H3', animationName: 'static', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
@@ -298,7 +300,7 @@ export const SYMBOL_INFO_MAP = {
 		postWinStatic: kmStatic,
 		static: kmStatic,
 		spin: kmStatic,
-		win: kmStatic,
+		win: kmWin,
 		land: kmLand,
 	},
 } as const;

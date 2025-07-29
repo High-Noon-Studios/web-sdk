@@ -322,8 +322,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "L3"
@@ -413,7 +412,7 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
@@ -1122,8 +1121,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "L5"
@@ -1211,7 +1209,7 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
@@ -1883,8 +1881,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H1"
@@ -1976,7 +1973,7 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
@@ -2251,8 +2248,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H4"
@@ -2346,7 +2342,7 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
@@ -2773,8 +2769,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H2"
@@ -2868,7 +2863,7 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
@@ -3090,8 +3085,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "L3"
@@ -3162,8 +3156,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H3"
@@ -3186,11 +3179,25 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
         "index": 44,
+        "type": "marxTrigger",
+        "positions": [
+          {
+            "reel": 0,
+            "row": 1
+          },
+          {
+            "reel": 4,
+            "row": 1
+          }
+        ]
+      },
+      {
+        "index": 45,
         "type": "flipWilds",
         "symbols": [
           {
@@ -3206,7 +3213,7 @@
         ]
       },
       {
-        "index": 45,
+        "index": 46,
         "type": "increaseWildMult",
         "symbols": [
           {
@@ -3217,7 +3224,7 @@
         ]
       },
       {
-        "index": 46,
+        "index": 47,
         "type": "winInfo",
         "totalWin": 540,
         "wins": [
@@ -3444,24 +3451,24 @@
         ]
       },
       {
-        "index": 47,
+        "index": 48,
         "type": "setWin",
         "amount": 540,
         "winLevel": 5
       },
       {
-        "index": 48,
+        "index": 49,
         "type": "setTotalWin",
         "amount": 850
       },
       {
-        "index": 49,
+        "index": 50,
         "type": "updateFreeSpin",
         "amount": 9,
         "total": 10
       },
       {
-        "index": 50,
+        "index": 51,
         "type": "reveal",
         "board": [
           [
@@ -3567,7 +3574,7 @@
         ]
       },
       {
-        "index": 51,
+        "index": 52,
         "type": "winInfo",
         "totalWin": 70,
         "wins": [
@@ -3630,24 +3637,24 @@
         ]
       },
       {
-        "index": 52,
+        "index": 53,
         "type": "setWin",
         "amount": 70,
         "winLevel": 2
       },
       {
-        "index": 53,
+        "index": 54,
         "type": "setTotalWin",
         "amount": 920
       },
       {
-        "index": 54,
+        "index": 55,
         "type": "freeSpinEnd",
         "amount": 919,
         "winLevel": 3
       },
       {
-        "index": 55,
+        "index": 56,
         "type": "finalWin",
         "amount": 920
       }
@@ -5666,8 +5673,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "L3"
@@ -5758,7 +5764,7 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
@@ -8494,8 +8500,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "L1"
@@ -8590,7 +8595,7 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
@@ -16412,8 +16417,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H4"
@@ -18785,8 +18789,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "L2"
@@ -18877,7 +18880,7 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
@@ -19454,8 +19457,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "L2"
@@ -19529,8 +19531,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H4"
@@ -19553,11 +19554,25 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
         "index": 39,
+        "type": "marxTrigger",
+        "positions": [
+          {
+            "reel": 0,
+            "row": 0
+          },
+          {
+            "reel": 4,
+            "row": 1
+          }
+        ]
+      },
+      {
+        "index": 40,
         "type": "increaseWildMult",
         "symbols": [
           {
@@ -19578,7 +19593,7 @@
         ]
       },
       {
-        "index": 40,
+        "index": 41,
         "type": "winInfo",
         "totalWin": 2120,
         "wins": [
@@ -19775,24 +19790,24 @@
         ]
       },
       {
-        "index": 41,
+        "index": 42,
         "type": "setWin",
         "amount": 2120,
         "winLevel": 6
       },
       {
-        "index": 42,
+        "index": 43,
         "type": "setTotalWin",
         "amount": 2360
       },
       {
-        "index": 43,
+        "index": 44,
         "type": "updateFreeSpin",
         "amount": 9,
         "total": 10
       },
       {
-        "index": 44,
+        "index": 45,
         "type": "reveal",
         "board": [
           [
@@ -19804,8 +19819,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "L2"
@@ -19898,11 +19912,11 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
-        "index": 45,
+        "index": 46,
         "type": "winInfo",
         "totalWin": 1280,
         "wins": [
@@ -20173,24 +20187,24 @@
         ]
       },
       {
-        "index": 46,
+        "index": 47,
         "type": "setWin",
         "amount": 1280,
         "winLevel": 5
       },
       {
-        "index": 47,
+        "index": 48,
         "type": "setTotalWin",
         "amount": 3640
       },
       {
-        "index": 48,
+        "index": 49,
         "type": "freeSpinEnd",
         "amount": 3640,
         "winLevel": 5
       },
       {
-        "index": 49,
+        "index": 50,
         "type": "finalWin",
         "amount": 3640
       }
@@ -22952,8 +22966,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "L3"
@@ -23041,7 +23054,7 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
@@ -26177,8 +26190,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H1"
@@ -26247,8 +26259,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H4"
@@ -26274,7 +26285,7 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
@@ -26300,6 +26311,20 @@
       },
       {
         "index": 6,
+        "type": "marxTrigger",
+        "positions": [
+          {
+            "reel": 0,
+            "row": 2
+          },
+          {
+            "reel": 4,
+            "row": 0
+          }
+        ]
+      },
+      {
+        "index": 7,
         "type": "flipWilds",
         "symbols": [
           {
@@ -26315,7 +26340,7 @@
         ]
       },
       {
-        "index": 7,
+        "index": 8,
         "type": "increaseWildMult",
         "symbols": [
           {
@@ -26331,7 +26356,7 @@
         ]
       },
       {
-        "index": 8,
+        "index": 9,
         "type": "winInfo",
         "totalWin": 17660,
         "wins": [
@@ -26750,24 +26775,24 @@
         ]
       },
       {
-        "index": 9,
+        "index": 10,
         "type": "setWin",
         "amount": 17660,
         "winLevel": 9
       },
       {
-        "index": 10,
+        "index": 11,
         "type": "setTotalWin",
         "amount": 17660
       },
       {
-        "index": 11,
+        "index": 12,
         "type": "updateFreeSpin",
         "amount": 1,
         "total": 10
       },
       {
-        "index": 12,
+        "index": 13,
         "type": "reveal",
         "board": [
           [
@@ -26876,7 +26901,7 @@
         ]
       },
       {
-        "index": 13,
+        "index": 14,
         "type": "newStickySymbols",
         "symbols": [
           {
@@ -26887,18 +26912,18 @@
         ]
       },
       {
-        "index": 14,
+        "index": 15,
         "type": "setTotalWin",
         "amount": 17660
       },
       {
-        "index": 15,
+        "index": 16,
         "type": "updateFreeSpin",
         "amount": 2,
         "total": 10
       },
       {
-        "index": 16,
+        "index": 17,
         "type": "reveal",
         "board": [
           [
@@ -27011,7 +27036,7 @@
         ]
       },
       {
-        "index": 17,
+        "index": 18,
         "type": "newStickySymbols",
         "symbols": [
           {
@@ -27032,7 +27057,7 @@
         ]
       },
       {
-        "index": 18,
+        "index": 19,
         "type": "winInfo",
         "totalWin": 8520,
         "wins": [
@@ -27401,24 +27426,24 @@
         ]
       },
       {
-        "index": 19,
+        "index": 20,
         "type": "setWin",
         "amount": 8520,
         "winLevel": 8
       },
       {
-        "index": 20,
+        "index": 21,
         "type": "setTotalWin",
         "amount": 26180
       },
       {
-        "index": 21,
+        "index": 22,
         "type": "updateFreeSpin",
         "amount": 3,
         "total": 10
       },
       {
-        "index": 22,
+        "index": 23,
         "type": "reveal",
         "board": [
           [
@@ -27430,8 +27455,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H4"
@@ -27504,8 +27528,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H4"
@@ -27528,11 +27551,11 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
-        "index": 23,
+        "index": 24,
         "type": "newStickySymbols",
         "symbols": [
           {
@@ -27548,7 +27571,21 @@
         ]
       },
       {
-        "index": 24,
+        "index": 25,
+        "type": "marxTrigger",
+        "positions": [
+          {
+            "reel": 0,
+            "row": 1
+          },
+          {
+            "reel": 4,
+            "row": 1
+          }
+        ]
+      },
+      {
+        "index": 26,
         "type": "increaseWildMult",
         "symbols": [
           {
@@ -27589,7 +27626,7 @@
         ]
       },
       {
-        "index": 25,
+        "index": 27,
         "type": "winInfo",
         "totalWin": 104000,
         "wins": [
@@ -28248,24 +28285,24 @@
         ]
       },
       {
-        "index": 26,
+        "index": 28,
         "type": "setWin",
         "amount": 104000,
         "winLevel": 9
       },
       {
-        "index": 27,
+        "index": 29,
         "type": "setTotalWin",
         "amount": 130180
       },
       {
-        "index": 28,
+        "index": 30,
         "type": "updateFreeSpin",
         "amount": 4,
         "total": 10
       },
       {
-        "index": 29,
+        "index": 31,
         "type": "reveal",
         "board": [
           [
@@ -28274,8 +28311,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H2"
@@ -28369,11 +28405,11 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
-        "index": 30,
+        "index": 32,
         "type": "winInfo",
         "totalWin": 76520,
         "wins": [
@@ -29040,24 +29076,24 @@
         ]
       },
       {
-        "index": 31,
+        "index": 33,
         "type": "setWin",
         "amount": 76520,
         "winLevel": 9
       },
       {
-        "index": 32,
+        "index": 34,
         "type": "setTotalWin",
         "amount": 206700
       },
       {
-        "index": 33,
+        "index": 35,
         "type": "updateFreeSpin",
         "amount": 5,
         "total": 10
       },
       {
-        "index": 34,
+        "index": 36,
         "type": "reveal",
         "board": [
           [
@@ -29163,7 +29199,7 @@
         ]
       },
       {
-        "index": 35,
+        "index": 37,
         "type": "winInfo",
         "totalWin": 63470,
         "wins": [
@@ -29794,24 +29830,24 @@
         ]
       },
       {
-        "index": 36,
+        "index": 38,
         "type": "setWin",
         "amount": 63470,
         "winLevel": 9
       },
       {
-        "index": 37,
+        "index": 39,
         "type": "setTotalWin",
         "amount": 270170
       },
       {
-        "index": 38,
+        "index": 40,
         "type": "updateFreeSpin",
         "amount": 6,
         "total": 10
       },
       {
-        "index": 39,
+        "index": 41,
         "type": "reveal",
         "board": [
           [
@@ -29917,7 +29953,7 @@
         ]
       },
       {
-        "index": 40,
+        "index": 42,
         "type": "winInfo",
         "totalWin": 51040,
         "wins": [
@@ -30552,24 +30588,24 @@
         ]
       },
       {
-        "index": 41,
+        "index": 43,
         "type": "setWin",
         "amount": 51040,
         "winLevel": 9
       },
       {
-        "index": 42,
+        "index": 44,
         "type": "setTotalWin",
         "amount": 321210
       },
       {
-        "index": 43,
+        "index": 45,
         "type": "updateFreeSpin",
         "amount": 7,
         "total": 10
       },
       {
-        "index": 44,
+        "index": 46,
         "type": "reveal",
         "board": [
           [
@@ -30675,7 +30711,7 @@
         ]
       },
       {
-        "index": 45,
+        "index": 47,
         "type": "winInfo",
         "totalWin": 61750,
         "wins": [
@@ -31302,24 +31338,24 @@
         ]
       },
       {
-        "index": 46,
+        "index": 48,
         "type": "setWin",
         "amount": 61750,
         "winLevel": 9
       },
       {
-        "index": 47,
+        "index": 49,
         "type": "setTotalWin",
         "amount": 382960
       },
       {
-        "index": 48,
+        "index": 50,
         "type": "updateFreeSpin",
         "amount": 8,
         "total": 10
       },
       {
-        "index": 49,
+        "index": 51,
         "type": "reveal",
         "board": [
           [
@@ -31335,8 +31371,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H2"
@@ -31424,11 +31459,11 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
-        "index": 50,
+        "index": 52,
         "type": "winInfo",
         "totalWin": 103300,
         "wins": [
@@ -32111,24 +32146,24 @@
         ]
       },
       {
-        "index": 51,
+        "index": 53,
         "type": "setWin",
         "amount": 103300,
         "winLevel": 9
       },
       {
-        "index": 52,
+        "index": 54,
         "type": "setTotalWin",
         "amount": 486260
       },
       {
-        "index": 53,
+        "index": 55,
         "type": "updateFreeSpin",
         "amount": 9,
         "total": 10
       },
       {
-        "index": 54,
+        "index": 56,
         "type": "reveal",
         "board": [
           [
@@ -32140,8 +32175,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H1"
@@ -32207,8 +32241,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "S",
@@ -32239,7 +32272,21 @@
         ]
       },
       {
-        "index": 55,
+        "index": 57,
+        "type": "marxTrigger",
+        "positions": [
+          {
+            "reel": 0,
+            "row": 1
+          },
+          {
+            "reel": 4,
+            "row": 0
+          }
+        ]
+      },
+      {
+        "index": 58,
         "type": "increaseWildMult",
         "symbols": [
           {
@@ -32265,7 +32312,7 @@
         ]
       },
       {
-        "index": 56,
+        "index": 59,
         "type": "winInfo",
         "totalWin": 72000,
         "wins": [
@@ -32904,18 +32951,18 @@
         ]
       },
       {
-        "index": 57,
+        "index": 60,
         "type": "setWin",
         "amount": 72000,
         "winLevel": 9
       },
       {
-        "index": 58,
+        "index": 61,
         "type": "setTotalWin",
         "amount": 558260
       },
       {
-        "index": 59,
+        "index": 62,
         "type": "freeSpinRetrigger",
         "totalFs": 12,
         "positions": [
@@ -32930,13 +32977,13 @@
         ]
       },
       {
-        "index": 60,
+        "index": 63,
         "type": "updateFreeSpin",
         "amount": 10,
         "total": 12
       },
       {
-        "index": 61,
+        "index": 64,
         "type": "reveal",
         "board": [
           [
@@ -32951,8 +32998,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H4"
@@ -33040,11 +33086,11 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
-        "index": 62,
+        "index": 65,
         "type": "winInfo",
         "totalWin": 99600,
         "wins": [
@@ -33731,24 +33777,24 @@
         ]
       },
       {
-        "index": 63,
+        "index": 66,
         "type": "setWin",
         "amount": 99600,
         "winLevel": 9
       },
       {
-        "index": 64,
+        "index": 67,
         "type": "setTotalWin",
         "amount": 657860
       },
       {
-        "index": 65,
+        "index": 68,
         "type": "updateFreeSpin",
         "amount": 11,
         "total": 12
       },
       {
-        "index": 66,
+        "index": 69,
         "type": "reveal",
         "board": [
           [
@@ -33855,7 +33901,7 @@
         ]
       },
       {
-        "index": 67,
+        "index": 70,
         "type": "winInfo",
         "totalWin": 27600,
         "wins": [
@@ -34252,23 +34298,23 @@
         ]
       },
       {
-        "index": 68,
+        "index": 71,
         "type": "wincap",
         "amount": 675000
       },
       {
-        "index": 69,
+        "index": 72,
         "type": "setTotalWin",
         "amount": 675000
       },
       {
-        "index": 70,
+        "index": 73,
         "type": "freeSpinEnd",
         "amount": 675000,
         "winLevel": 10
       },
       {
-        "index": 71,
+        "index": 74,
         "type": "finalWin",
         "amount": 675000
       }
@@ -35134,8 +35180,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H2"
@@ -35203,8 +35248,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "L3"
@@ -35230,7 +35274,7 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
@@ -35246,6 +35290,20 @@
       },
       {
         "index": 6,
+        "type": "marxTrigger",
+        "positions": [
+          {
+            "reel": 0,
+            "row": 1
+          },
+          {
+            "reel": 4,
+            "row": 0
+          }
+        ]
+      },
+      {
+        "index": 7,
         "type": "flipWilds",
         "symbols": [
           {
@@ -35261,7 +35319,7 @@
         ]
       },
       {
-        "index": 7,
+        "index": 8,
         "type": "winInfo",
         "totalWin": 310,
         "wins": [
@@ -35432,24 +35490,24 @@
         ]
       },
       {
-        "index": 8,
+        "index": 9,
         "type": "setWin",
         "amount": 310,
         "winLevel": 4
       },
       {
-        "index": 9,
+        "index": 10,
         "type": "setTotalWin",
         "amount": 310
       },
       {
-        "index": 10,
+        "index": 11,
         "type": "updateFreeSpin",
         "amount": 1,
         "total": 10
       },
       {
-        "index": 11,
+        "index": 12,
         "type": "reveal",
         "board": [
           [
@@ -35555,7 +35613,7 @@
         ]
       },
       {
-        "index": 12,
+        "index": 13,
         "type": "winInfo",
         "totalWin": 160,
         "wins": [
@@ -35622,24 +35680,24 @@
         ]
       },
       {
-        "index": 13,
+        "index": 14,
         "type": "setWin",
         "amount": 160,
         "winLevel": 3
       },
       {
-        "index": 14,
+        "index": 15,
         "type": "setTotalWin",
         "amount": 470
       },
       {
-        "index": 15,
+        "index": 16,
         "type": "updateFreeSpin",
         "amount": 2,
         "total": 10
       },
       {
-        "index": 16,
+        "index": 17,
         "type": "reveal",
         "board": [
           [
@@ -35745,18 +35803,18 @@
         ]
       },
       {
-        "index": 17,
+        "index": 18,
         "type": "setTotalWin",
         "amount": 470
       },
       {
-        "index": 18,
+        "index": 19,
         "type": "updateFreeSpin",
         "amount": 3,
         "total": 10
       },
       {
-        "index": 19,
+        "index": 20,
         "type": "reveal",
         "board": [
           [
@@ -35862,18 +35920,18 @@
         ]
       },
       {
-        "index": 20,
+        "index": 21,
         "type": "setTotalWin",
         "amount": 470
       },
       {
-        "index": 21,
+        "index": 22,
         "type": "updateFreeSpin",
         "amount": 4,
         "total": 10
       },
       {
-        "index": 22,
+        "index": 23,
         "type": "reveal",
         "board": [
           [
@@ -35882,8 +35940,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H1"
@@ -35977,11 +36034,11 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
-        "index": 23,
+        "index": 24,
         "type": "winInfo",
         "totalWin": 190,
         "wins": [
@@ -36096,24 +36153,24 @@
         ]
       },
       {
-        "index": 24,
+        "index": 25,
         "type": "setWin",
         "amount": 190,
         "winLevel": 3
       },
       {
-        "index": 25,
+        "index": 26,
         "type": "setTotalWin",
         "amount": 660
       },
       {
-        "index": 26,
+        "index": 27,
         "type": "updateFreeSpin",
         "amount": 5,
         "total": 10
       },
       {
-        "index": 27,
+        "index": 28,
         "type": "reveal",
         "board": [
           [
@@ -36219,7 +36276,7 @@
         ]
       },
       {
-        "index": 28,
+        "index": 29,
         "type": "winInfo",
         "totalWin": 20,
         "wins": [
@@ -36252,24 +36309,24 @@
         ]
       },
       {
-        "index": 29,
+        "index": 30,
         "type": "setWin",
         "amount": 20,
         "winLevel": 2
       },
       {
-        "index": 30,
+        "index": 31,
         "type": "setTotalWin",
         "amount": 680
       },
       {
-        "index": 31,
+        "index": 32,
         "type": "updateFreeSpin",
         "amount": 6,
         "total": 10
       },
       {
-        "index": 32,
+        "index": 33,
         "type": "reveal",
         "board": [
           [
@@ -36278,8 +36335,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "L5"
@@ -36373,11 +36429,11 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
-        "index": 33,
+        "index": 34,
         "type": "winInfo",
         "totalWin": 420,
         "wins": [
@@ -36492,24 +36548,24 @@
         ]
       },
       {
-        "index": 34,
+        "index": 35,
         "type": "setWin",
         "amount": 420,
         "winLevel": 4
       },
       {
-        "index": 35,
+        "index": 36,
         "type": "setTotalWin",
         "amount": 1100
       },
       {
-        "index": 36,
+        "index": 37,
         "type": "updateFreeSpin",
         "amount": 7,
         "total": 10
       },
       {
-        "index": 37,
+        "index": 38,
         "type": "reveal",
         "board": [
           [
@@ -36617,7 +36673,7 @@
         ]
       },
       {
-        "index": 38,
+        "index": 39,
         "type": "newStickySymbols",
         "symbols": [
           {
@@ -36628,7 +36684,7 @@
         ]
       },
       {
-        "index": 39,
+        "index": 40,
         "type": "winInfo",
         "totalWin": 40,
         "wins": [
@@ -36687,24 +36743,24 @@
         ]
       },
       {
-        "index": 40,
+        "index": 41,
         "type": "setWin",
         "amount": 40,
         "winLevel": 2
       },
       {
-        "index": 41,
+        "index": 42,
         "type": "setTotalWin",
         "amount": 1140
       },
       {
-        "index": 42,
+        "index": 43,
         "type": "updateFreeSpin",
         "amount": 8,
         "total": 10
       },
       {
-        "index": 43,
+        "index": 44,
         "type": "reveal",
         "board": [
           [
@@ -36810,7 +36866,7 @@
         ]
       },
       {
-        "index": 44,
+        "index": 45,
         "type": "winInfo",
         "totalWin": 90,
         "wins": [
@@ -36895,24 +36951,24 @@
         ]
       },
       {
-        "index": 45,
+        "index": 46,
         "type": "setWin",
         "amount": 90,
         "winLevel": 2
       },
       {
-        "index": 46,
+        "index": 47,
         "type": "setTotalWin",
         "amount": 1230
       },
       {
-        "index": 47,
+        "index": 48,
         "type": "updateFreeSpin",
         "amount": 9,
         "total": 10
       },
       {
-        "index": 48,
+        "index": 49,
         "type": "reveal",
         "board": [
           [
@@ -37024,7 +37080,7 @@
         ]
       },
       {
-        "index": 49,
+        "index": 50,
         "type": "newStickySymbols",
         "symbols": [
           {
@@ -37040,7 +37096,7 @@
         ]
       },
       {
-        "index": 50,
+        "index": 51,
         "type": "winInfo",
         "totalWin": 40,
         "wins": [
@@ -37099,24 +37155,24 @@
         ]
       },
       {
-        "index": 51,
+        "index": 52,
         "type": "setWin",
         "amount": 40,
         "winLevel": 2
       },
       {
-        "index": 52,
+        "index": 53,
         "type": "setTotalWin",
         "amount": 1270
       },
       {
-        "index": 53,
+        "index": 54,
         "type": "freeSpinEnd",
         "amount": 1270,
         "winLevel": 4
       },
       {
-        "index": 54,
+        "index": 55,
         "type": "finalWin",
         "amount": 1270
       }
@@ -39470,8 +39526,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H4"
@@ -39537,8 +39592,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H1"
@@ -39561,11 +39615,25 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
         "index": 16,
+        "type": "marxTrigger",
+        "positions": [
+          {
+            "reel": 0,
+            "row": 2
+          },
+          {
+            "reel": 4,
+            "row": 1
+          }
+        ]
+      },
+      {
+        "index": 17,
         "type": "flipWilds",
         "symbols": [
           {
@@ -39581,7 +39649,7 @@
         ]
       },
       {
-        "index": 17,
+        "index": 18,
         "type": "increaseWildMult",
         "symbols": [
           {
@@ -39592,7 +39660,7 @@
         ]
       },
       {
-        "index": 18,
+        "index": 19,
         "type": "winInfo",
         "totalWin": 1940,
         "wins": [
@@ -39797,24 +39865,24 @@
         ]
       },
       {
-        "index": 19,
+        "index": 20,
         "type": "setWin",
         "amount": 1940,
         "winLevel": 6
       },
       {
-        "index": 20,
+        "index": 21,
         "type": "setTotalWin",
         "amount": 2000
       },
       {
-        "index": 21,
+        "index": 22,
         "type": "updateFreeSpin",
         "amount": 3,
         "total": 10
       },
       {
-        "index": 22,
+        "index": 23,
         "type": "reveal",
         "board": [
           [
@@ -39922,7 +39990,7 @@
         ]
       },
       {
-        "index": 23,
+        "index": 24,
         "type": "winInfo",
         "totalWin": 10,
         "wins": [
@@ -39955,24 +40023,24 @@
         ]
       },
       {
-        "index": 24,
+        "index": 25,
         "type": "setWin",
         "amount": 10,
         "winLevel": 2
       },
       {
-        "index": 25,
+        "index": 26,
         "type": "setTotalWin",
         "amount": 2010
       },
       {
-        "index": 26,
+        "index": 27,
         "type": "updateFreeSpin",
         "amount": 4,
         "total": 10
       },
       {
-        "index": 27,
+        "index": 28,
         "type": "reveal",
         "board": [
           [
@@ -40078,18 +40146,18 @@
         ]
       },
       {
-        "index": 28,
+        "index": 29,
         "type": "setTotalWin",
         "amount": 2010
       },
       {
-        "index": 29,
+        "index": 30,
         "type": "updateFreeSpin",
         "amount": 5,
         "total": 10
       },
       {
-        "index": 30,
+        "index": 31,
         "type": "reveal",
         "board": [
           [
@@ -40102,8 +40170,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H3"
@@ -40200,11 +40267,11 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
-        "index": 31,
+        "index": 32,
         "type": "newStickySymbols",
         "symbols": [
           {
@@ -40220,7 +40287,7 @@
         ]
       },
       {
-        "index": 32,
+        "index": 33,
         "type": "winInfo",
         "totalWin": 420,
         "wins": [
@@ -40487,24 +40554,24 @@
         ]
       },
       {
-        "index": 33,
+        "index": 34,
         "type": "setWin",
         "amount": 420,
         "winLevel": 4
       },
       {
-        "index": 34,
+        "index": 35,
         "type": "setTotalWin",
         "amount": 2430
       },
       {
-        "index": 35,
+        "index": 36,
         "type": "updateFreeSpin",
         "amount": 6,
         "total": 10
       },
       {
-        "index": 36,
+        "index": 37,
         "type": "reveal",
         "board": [
           [
@@ -40610,18 +40677,18 @@
         ]
       },
       {
-        "index": 37,
+        "index": 38,
         "type": "setTotalWin",
         "amount": 2430
       },
       {
-        "index": 38,
+        "index": 39,
         "type": "updateFreeSpin",
         "amount": 7,
         "total": 10
       },
       {
-        "index": 39,
+        "index": 40,
         "type": "reveal",
         "board": [
           [
@@ -40633,8 +40700,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H1"
@@ -40725,11 +40791,11 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
-        "index": 40,
+        "index": 41,
         "type": "winInfo",
         "totalWin": 940,
         "wins": [
@@ -41004,24 +41070,24 @@
         ]
       },
       {
-        "index": 41,
+        "index": 42,
         "type": "setWin",
         "amount": 940,
         "winLevel": 5
       },
       {
-        "index": 42,
+        "index": 43,
         "type": "setTotalWin",
         "amount": 3370
       },
       {
-        "index": 43,
+        "index": 44,
         "type": "updateFreeSpin",
         "amount": 8,
         "total": 10
       },
       {
-        "index": 44,
+        "index": 45,
         "type": "reveal",
         "board": [
           [
@@ -41127,7 +41193,7 @@
         ]
       },
       {
-        "index": 45,
+        "index": 46,
         "type": "winInfo",
         "totalWin": 180,
         "wins": [
@@ -41238,24 +41304,24 @@
         ]
       },
       {
-        "index": 46,
+        "index": 47,
         "type": "setWin",
         "amount": 180,
         "winLevel": 3
       },
       {
-        "index": 47,
+        "index": 48,
         "type": "setTotalWin",
         "amount": 3550
       },
       {
-        "index": 48,
+        "index": 49,
         "type": "updateFreeSpin",
         "amount": 9,
         "total": 10
       },
       {
-        "index": 49,
+        "index": 50,
         "type": "reveal",
         "board": [
           [
@@ -41361,18 +41427,18 @@
         ]
       },
       {
-        "index": 50,
+        "index": 51,
         "type": "setTotalWin",
         "amount": 3550
       },
       {
-        "index": 51,
+        "index": 52,
         "type": "freeSpinEnd",
         "amount": 3550,
         "winLevel": 5
       },
       {
-        "index": 52,
+        "index": 53,
         "type": "finalWin",
         "amount": 3550
       }
@@ -44424,7 +44490,7 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
@@ -46708,8 +46774,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "L3"
@@ -46775,8 +46840,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "H3"
@@ -46799,11 +46863,25 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
         "index": 19,
+        "type": "marxTrigger",
+        "positions": [
+          {
+            "reel": 0,
+            "row": 2
+          },
+          {
+            "reel": 4,
+            "row": 1
+          }
+        ]
+      },
+      {
+        "index": 20,
         "type": "flipWilds",
         "symbols": [
           {
@@ -46814,7 +46892,7 @@
         ]
       },
       {
-        "index": 20,
+        "index": 21,
         "type": "winInfo",
         "totalWin": 240,
         "wins": [
@@ -46981,24 +47059,24 @@
         ]
       },
       {
-        "index": 21,
+        "index": 22,
         "type": "setWin",
         "amount": 240,
         "winLevel": 4
       },
       {
-        "index": 22,
+        "index": 23,
         "type": "setTotalWin",
         "amount": 280
       },
       {
-        "index": 23,
+        "index": 24,
         "type": "updateFreeSpin",
         "amount": 4,
         "total": 10
       },
       {
-        "index": 24,
+        "index": 25,
         "type": "reveal",
         "board": [
           [
@@ -47108,7 +47186,7 @@
         ]
       },
       {
-        "index": 25,
+        "index": 26,
         "type": "newStickySymbols",
         "symbols": [
           {
@@ -47124,7 +47202,7 @@
         ]
       },
       {
-        "index": 26,
+        "index": 27,
         "type": "winInfo",
         "totalWin": 150,
         "wins": [
@@ -47161,24 +47239,24 @@
         ]
       },
       {
-        "index": 27,
+        "index": 28,
         "type": "setWin",
         "amount": 150,
         "winLevel": 3
       },
       {
-        "index": 28,
+        "index": 29,
         "type": "setTotalWin",
         "amount": 430
       },
       {
-        "index": 29,
+        "index": 30,
         "type": "updateFreeSpin",
         "amount": 5,
         "total": 10
       },
       {
-        "index": 30,
+        "index": 31,
         "type": "reveal",
         "board": [
           [
@@ -47190,8 +47268,7 @@
             },
             {
               "name": "KM",
-              "wild": true,
-              "scatter": true
+              "wild": true
             },
             {
               "name": "L1"
@@ -47283,11 +47360,11 @@
           0,
           0,
           0,
-          0
+          1
         ]
       },
       {
-        "index": 31,
+        "index": 32,
         "type": "winInfo",
         "totalWin": 250,
         "wins": [
@@ -47380,24 +47457,24 @@
         ]
       },
       {
-        "index": 32,
+        "index": 33,
         "type": "setWin",
         "amount": 250,
         "winLevel": 4
       },
       {
-        "index": 33,
+        "index": 34,
         "type": "setTotalWin",
         "amount": 680
       },
       {
-        "index": 34,
+        "index": 35,
         "type": "updateFreeSpin",
         "amount": 6,
         "total": 10
       },
       {
-        "index": 35,
+        "index": 36,
         "type": "reveal",
         "board": [
           [
@@ -47503,18 +47580,18 @@
         ]
       },
       {
-        "index": 36,
+        "index": 37,
         "type": "setTotalWin",
         "amount": 680
       },
       {
-        "index": 37,
+        "index": 38,
         "type": "updateFreeSpin",
         "amount": 7,
         "total": 10
       },
       {
-        "index": 38,
+        "index": 39,
         "type": "reveal",
         "board": [
           [
@@ -47620,7 +47697,7 @@
         ]
       },
       {
-        "index": 39,
+        "index": 40,
         "type": "winInfo",
         "totalWin": 30,
         "wins": [
@@ -47657,24 +47734,24 @@
         ]
       },
       {
-        "index": 40,
+        "index": 41,
         "type": "setWin",
         "amount": 30,
         "winLevel": 2
       },
       {
-        "index": 41,
+        "index": 42,
         "type": "setTotalWin",
         "amount": 710
       },
       {
-        "index": 42,
+        "index": 43,
         "type": "updateFreeSpin",
         "amount": 8,
         "total": 10
       },
       {
-        "index": 43,
+        "index": 44,
         "type": "reveal",
         "board": [
           [
@@ -47782,7 +47859,7 @@
         ]
       },
       {
-        "index": 44,
+        "index": 45,
         "type": "winInfo",
         "totalWin": 40,
         "wins": [
@@ -47849,24 +47926,24 @@
         ]
       },
       {
-        "index": 45,
+        "index": 46,
         "type": "setWin",
         "amount": 40,
         "winLevel": 2
       },
       {
-        "index": 46,
+        "index": 47,
         "type": "setTotalWin",
         "amount": 750
       },
       {
-        "index": 47,
+        "index": 48,
         "type": "updateFreeSpin",
         "amount": 9,
         "total": 10
       },
       {
-        "index": 48,
+        "index": 49,
         "type": "reveal",
         "board": [
           [
@@ -47973,7 +48050,7 @@
         ]
       },
       {
-        "index": 49,
+        "index": 50,
         "type": "winInfo",
         "totalWin": 30,
         "wins": [
@@ -48036,24 +48113,24 @@
         ]
       },
       {
-        "index": 50,
+        "index": 51,
         "type": "setWin",
         "amount": 30,
         "winLevel": 2
       },
       {
-        "index": 51,
+        "index": 52,
         "type": "setTotalWin",
         "amount": 780
       },
       {
-        "index": 52,
+        "index": 53,
         "type": "freeSpinEnd",
         "amount": 780,
         "winLevel": 3
       },
       {
-        "index": 53,
+        "index": 54,
         "type": "finalWin",
         "amount": 780
       }

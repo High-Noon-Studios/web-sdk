@@ -174,6 +174,10 @@ export const bookEventHandlerMap: BookEventHandlerMap<BookEvent, BookEventContex
 			multiplier: symbol.multiplier,
 		})) });
 	},
+	marxTrigger: async (bookEvent: BookEventOfType<'marxTrigger'>) => {
+		await animateSymbols({ positions: bookEvent.positions });
+		await eventEmitter.broadcastAsync({ type: 'marxTrigger' });
+	},
 	// customised
 	createBonusSnapshot: async (bookEvent: BookEventOfType<'createBonusSnapshot'>) => {
 		const { bookEvents } = bookEvent;
