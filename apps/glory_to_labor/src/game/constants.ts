@@ -187,13 +187,13 @@ const h1Land = { type: 'spine', assetKey: 'H1', animationName: 'land', sizeRatio
 const h2Land = { type: 'spine', assetKey: 'H2', animationName: 'land', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE }, timeScale: 2 };
 const h3Land = { type: 'spine', assetKey: 'H3', animationName: 'land', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE }, timeScale: 2 };
 const h4Land = { type: 'spine', assetKey: 'H4', animationName: 'land', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE }, timeScale: 2 };
-const marxLand = { type: 'spine', assetKey: 'marx', animationName: 'land', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE }, timeScale: 2 };
+const kmLand = { type: 'spine', assetKey: 'KM', animationName: 'land', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE }, timeScale: 2 };
 
 const h1Static = { type: 'spine', assetKey: 'H1', animationName: 'static', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
 const h2Static = { type: 'spine', assetKey: 'H2', animationName: 'static', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
 const h3Static = { type: 'spine', assetKey: 'H3', animationName: 'static', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
 const h4Static = { type: 'spine', assetKey: 'H4', animationName: 'static', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
-const marxStatic = { type: 'spine', assetKey: 'marx', animationName: 'static', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
+const kmStatic = { type: 'spine', assetKey: 'KM', animationName: 'static', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
 
 const l1Static = { type: 'sprite', assetKey: 'L1.png', sizeRatios: { width: 1.37 / 2.15, height: 2.15 / 2.15 } };
 const l2Static = { type: 'sprite', assetKey: 'L2.png', sizeRatios: { width: 1.37 / 2.15, height: 2.15 / 2.15 } };
@@ -203,8 +203,6 @@ const l5Static = { type: 'sprite', assetKey: 'L5.png', sizeRatios: { width: 1.37
 
 const sStatic = { type: 'spine', assetKey: 'scatter', animationName: 'idle', sizeRatios: { width: 1, height: 1 } };
 const wStatic = { type: 'sprite', assetKey: 'Wild.png', sizeRatios: { width: 1.1 * 1.37 / 2.15, height: 1.1 * 2.15 / 2.15 } };
-
-const marxLookAround = { type: 'spine', assetKey: 'marx', animationName: 'look_around', sizeRatios: { width: HIGH_SYMBOL_SIZE * 0.6933203125, height: HIGH_SYMBOL_SIZE } };
 
 export const SYMBOL_INFO_MAP = {
 	H1: {
@@ -294,6 +292,14 @@ export const SYMBOL_INFO_MAP = {
 		spin: sStatic,
 		win: sStatic,
 		land: scatterLand,
+	},
+	KM: {
+		explosion,
+		postWinStatic: kmStatic,
+		static: kmStatic,
+		spin: kmStatic,
+		win: kmStatic,
+		land: kmLand,
 	},
 } as const;
 

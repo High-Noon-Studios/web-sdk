@@ -1,10 +1,18 @@
+<script lang="ts" module>
+	import type { StickySymbolWin } from '../game/types';
+
+	export type EmitterEventMarxLasers =
+		| { type: 'flipWilds'; symbols: StickySymbolWin[] }
+		| { type: 'increaseWildMult'; symbols: StickySymbolWin[] }
+</script>
+
 <script lang="ts">
 	import { getContextSpine } from 'pixi-svelte';
 	import { getContext } from '../game/context';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import {  } from '@esotericsoftware/spine-pixi-v8';
 	import { Tween } from 'svelte/motion';
-	import { cubicIn, cubicInOut, cubicOut, expoInOut, sineInOut  } from 'svelte/easing';
+	import { sineIn, sineInOut, sineOut  } from 'svelte/easing';
 	import type { EasingFunction } from 'svelte/transition';
 	import { getSymbolX } from '../game/utils';
 	import Laser from './Laser.svelte';
@@ -22,7 +30,9 @@
 
 	const symbolPositions = context.stateGame.board.slice(1, 4).flatMap(reel => reel.reelState.symbols.slice(1, 4).map(symbol => ({
 		x: boardLeft + getSymbolX(reel.reelIndex) ,
-		y: boardTop + symbol.symbolY()
+		y: boardTop + symbol.symbolY(),
+		reel: reel.reelIndex,
+		row: symbol.symbolIndex
 	})));
 
 	const marxSpine = getContextSpine();
@@ -41,6 +51,10 @@
 	let rootTween = new Tween({x: 0, y: 0});
 	let lookAtTween = new Tween({x: 0, y: 0, rotation: 0});
 	let laserLengthTween = new Tween(0);
+
+	const getSymbolPosition = (symbol: { reel: number, row: number }) => {
+		return symbolPositions.find(s => s.reel === symbol.reel && s.row === symbol.row)!;
+	}
 
 	const startIdleAnimation = async () => {
 		isIdle = true;
@@ -94,7 +108,7 @@
 		target: { x, y },
 		rotation = 0,
 		duration = 250,
-		easing = cubicInOut,
+		easing = sineInOut,
 		strength = 1
 	}: {
 		target: { x: number, y: number },
@@ -109,28 +123,28 @@
 	}
 
 	const resetLookAtTarget = async ({ duration = 250 }: { duration?: number }) => {
-		await lookAtTween.set({ x: lookAtBoneCenterSpine.x, y: lookAtBoneCenterSpine.y, rotation: 0 }, { duration: duration * SPEED_SCALE, easing: cubicOut });
+		await lookAtTween.set({ x: lookAtBoneCenterSpine.x, y: lookAtBoneCenterSpine.y, rotation: 0 }, { duration: duration * SPEED_SCALE, easing: sineOut });
 		startIdleAnimation();
 	}
 
 	const fireLasers = async ({ target }: { target: { x: number, y: number } }) => {
 		// wind back, charge lasers
-		await lookAtTarget({ target, duration: 3000 * SPEED_SCALE, easing: cubicInOut, strength: -0.5, rotation: 1})
+		await lookAtTarget({ target, duration: 3000 * SPEED_SCALE, easing: sineInOut, strength: -0.5, rotation: 1})
 
 		// fire lasers - inital
-		lookAtTarget({ target, duration: 500 * SPEED_SCALE, easing: cubicIn, strength: 0.6, rotation: -2.5}),
-		await laserLengthTween.set(1, { duration: 200 * SPEED_SCALE, easing: cubicIn }),
+		lookAtTarget({ target, duration: 500 * SPEED_SCALE, easing: sineIn, strength: 0.6, rotation: -2.5}),
+		await laserLengthTween.set(1, { duration: 200 * SPEED_SCALE, easing: sineIn }),
 
 		// once they connect to the target, emit particles and press head through
 		emitParticles = true;
-		await lookAtTarget({ target, duration: 3000 * SPEED_SCALE, strength: 1, easing: cubicOut, rotation: -5 });
+		await lookAtTarget({ target, duration: 3000 * SPEED_SCALE, strength: 1, easing: sineOut, rotation: -5 });
 
 		isLaserShrinking = true;
 		emitParticles = false;
 
 		// When anchor is 1, position the sprite at the target location
 		// This makes the laser shrink from eyes to target
-		await laserLengthTween.set(0, { duration: 200 * SPEED_SCALE, easing: cubicOut });
+		await laserLengthTween.set(0, { duration: 200 * SPEED_SCALE, easing: sineOut });
 
 		isLaserShrinking = false;
 	}
@@ -182,26 +196,24 @@
 			resetLookAtTarget({ duration: 0 });
 		});
 
-		app.ticker.add(() => {
-			updateEyePositions();
-			updateLookAt();
-		});
-
-		app.stage.eventMode = 'dynamic';
-		app.stage.addEventListener('click', (e) => {
-			fireLasersAtTargets(symbolPositions.slice(0, 1));
-		});
+		app.ticker.add(updateEyePositions);
+		app.ticker.add(updateLookAt);
 	})
-</script>
 
-<!-- <Graphics
-	draw={(g) => {
-		g.circle(0, 0, 10);
-		g.fill({ color: 0x00ff00 });
-	}}
-	{...lookAtBonePositionPixi}
-	zIndex={100}
-/> -->
+	onDestroy(() => {
+		app.ticker.remove(updateEyePositions);
+		app.ticker.remove(updateLookAt);
+	});
+
+	context.eventEmitter.subscribeOnMount({
+		flipWilds: async ({ symbols }) => {
+			for (const symbol of symbols) {
+				await fireLasersAtTargets([getSymbolPosition(symbol)]);
+				context.eventEmitter.broadcastAsync({ type: 'stickyBoardNew', stickySymbols: [symbol] });
+			}
+		}
+	});
+</script>
 
 <Laser
 	key="laser"

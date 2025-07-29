@@ -3,7 +3,6 @@
 
 	import { getSymbolX, getSymbolY } from '../game/utils';
 	import { getContext } from '../game/context';
-	import { SYMBOL_SIZE } from '../game/constants';
 	import Symbol from './Symbol.svelte';
 
 	const context = getContext();
@@ -12,7 +11,7 @@
 {#each context.stateGame.stickySymbols as stickySymbol}
 	<Container
 		x={getSymbolX(stickySymbol.stickySymbol.reel)}
-		y={getSymbolY(stickySymbol.stickySymbol.row)}
+		y={getSymbolY(stickySymbol.stickySymbol.row - 1)}
 	>
 		<Symbol
 			rawSymbol={{

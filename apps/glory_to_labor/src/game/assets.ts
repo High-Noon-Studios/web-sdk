@@ -69,7 +69,15 @@ export default {
 			scale: 1,
 		},
 	},
-	marx: {
+	KM: {
+		type: 'spine',
+		src: {
+			atlas: new URL('../../assets/spines/symbols/main.atlas', import.meta.url).href,
+			skeleton: new URL('../../assets/spines/symbols/marx_frame.json', import.meta.url).href,
+			scale: 1,
+		},
+	},
+	marxHero: {
 		type: 'spine',
 		src: {
 			atlas: new URL('../../assets/spines/symbols/main.atlas', import.meta.url).href,
@@ -275,5 +283,13 @@ export default {
 	bonusBackground: {
 		type: 'sprite',
 		src: new URL('../../assets/sprites/background/bonus.png', import.meta.url).href,
+	},
+	winFrame: {
+		type: 'spine',
+		src: {
+			atlas: new URL('../../assets/spines/symbols/main.atlas', import.meta.url).href,
+			skeleton: new URL('../../assets/spines/symbols/win_frame.json', import.meta.url).href,
+			scale: 1,
+		},
 	},
 } as const;

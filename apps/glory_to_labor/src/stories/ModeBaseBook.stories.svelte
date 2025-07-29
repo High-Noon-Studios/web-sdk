@@ -18,7 +18,7 @@
 	import Game from '../components/Game.svelte';
 	import { setContext } from '../game/context';
 	import { playBet } from '../game/utils';
-	import books from './data/base_books';
+	import books from './data/books_base';
 
 	setContext();
 </script>
@@ -57,7 +57,6 @@
 		skipLoadingScreen: true,
 		data: {},
 		action: async () => {
-			console.log(JSON.stringify(books[0], null, 2))
 			const index = books.findIndex((book) => book.payoutMultiplier === 0);
 			const data = books[index];
 			data.events = data.events.map(event => {
@@ -190,6 +189,25 @@
 				book.events.some((event) => event.type === 'freeSpinTrigger') && book.payoutMultiplier > 10000,
 			);
 			const data = books[index];
+			console.log('Running a book at index', index);
+			await playBet({ ...data, state: data.events });
+		},
+	})}
+	{template}
+/>
+
+<Story
+	name="marx_trigger"
+	args={templateArgs({
+		skipLoadingScreen: true,
+		data: {},
+		action: async () => {
+			const index = books.findIndex((book) =>
+				book.events.some((event) => event.type === 'reveal' && event.board.reduce((acc, row) => acc + row.filter(symbol => symbol.name === 'KM').length, 0) === 2),
+			);
+			const data = books[index];
+
+			console.log(JSON.stringify(data, null, 2))
 			console.log('Running a book at index', index);
 			await playBet({ ...data, state: data.events });
 		},

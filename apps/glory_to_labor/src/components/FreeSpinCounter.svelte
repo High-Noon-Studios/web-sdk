@@ -25,9 +25,8 @@
 	const scale = 1;
 	const position = $derived({
 		x:
-			context.stateGameDerived.boardLayout().x -
-			context.stateGameDerived.boardLayout().width * 0.5 -
-			panelSizes.width,
+			context.stateGameDerived.boardLayout().x +
+			context.stateGameDerived.boardLayout().width * 0.5,
 		y:
 			context.stateGameDerived.boardLayout().height * 0.5,
 	});

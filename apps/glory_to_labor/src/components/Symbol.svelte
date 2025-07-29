@@ -4,7 +4,7 @@
 	import { getSymbolInfo } from '../game/utils';
 	import type { SymbolState, RawSymbol } from '../game/types';
 	import { getContext } from '../game/context';
-	import { BitmapText } from 'pixi-svelte';
+	import { BitmapText, Text } from 'pixi-svelte';
 
 	type Props = {
 		x?: number;

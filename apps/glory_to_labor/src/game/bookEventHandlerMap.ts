@@ -154,11 +154,25 @@ export const bookEventHandlerMap: BookEventHandlerMap<BookEvent, BookEventContex
 
 		const stickySymbols = bookEvent.symbols.map((stickySymbol) => ({
 			reel: stickySymbol.reel,
-			row: stickySymbol.row - 1,
+			row: stickySymbol.row,
 			multiplier: stickySymbol.multiplier,
 		}));
 
 		await eventEmitter.broadcastAsync({ type: 'stickyBoardNew', stickySymbols });
+	},
+	flipWilds: async (bookEvent: BookEventOfType<'flipWilds'>) => {
+		await eventEmitter.broadcastAsync({ type: 'flipWilds', symbols: bookEvent.symbols.map((symbol) => ({
+			reel: symbol.reel,
+			row: symbol.row,
+			multiplier: symbol.multiplier,
+		})) });
+	},
+	increaseWildMult: async (bookEvent: BookEventOfType<'increaseWildMult'>) => {
+		await eventEmitter.broadcastAsync({ type: 'increaseWildMult', symbols: bookEvent.symbols.map((symbol) => ({
+			reel: symbol.reel,
+			row: symbol.row,
+			multiplier: symbol.multiplier,
+		})) });
 	},
 	// customised
 	createBonusSnapshot: async (bookEvent: BookEventOfType<'createBonusSnapshot'>) => {

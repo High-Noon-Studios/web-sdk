@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SpineProvider, SpineTrack, type SpineTrackProps } from 'pixi-svelte';
+	import { SpineProvider, SpineTrack, type SpineTrackProps, Container } from 'pixi-svelte';
 
 	import { SYMBOL_SIZE } from '../game/constants';
 	import { getSymbolInfo } from '../game/utils';
@@ -17,6 +17,16 @@
 	const props: Props = $props();
 </script>
 
+
+<!-- tumble frame -->
+{#if props.showWinFrame}
+<Container>
+	<SpineProvider x={props.x} y={props.y} key="winFrame" width={SYMBOL_SIZE * 1.5}>
+		<SpineTrack trackIndex={0} animationName={'idle'} loop />
+	</SpineProvider>
+</Container>
+{/if}
+
 <!-- main -->
 <SymbolSpineMain
 	x={props.x}
@@ -26,9 +36,3 @@
 	loop={props.loop}
 />
 
-<!-- tumble frame -->
-{#if props.showWinFrame}
-	<SpineProvider x={props.x} y={props.y} key="anticipation" width={SYMBOL_SIZE * 0.19}>
-		<SpineTrack trackIndex={0} animationName={'payframe'} loop />
-	</SpineProvider>
-{/if}

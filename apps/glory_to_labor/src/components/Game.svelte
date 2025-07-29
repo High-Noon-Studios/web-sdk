@@ -29,6 +29,8 @@
 	import Banner from './Banner.svelte';
 	import MarxLasers from './MarxLasers.svelte';
 	import MarxLasersProvider from './MarxLasersProvider.svelte';
+	import { FadeContainer } from 'components-pixi';
+	import { SECOND } from 'constants-shared/time';
 
 	const context = getContext();
 
@@ -84,13 +86,14 @@
 				<Banner />
 			<StickyBoard />
 
+			<FadeContainer show={context.stateGame.gameType === 'freegame'} duration={SECOND}>
+				<MarxLasersProvider height={800}>
+					<MarxLasers />
+				</MarxLasersProvider>
+			</FadeContainer>
 		</MainContainer>
 
-		<MainContainer>
-			<MarxLasersProvider height={800}>
-				<MarxLasers />
-			</MarxLasersProvider>
-		</MainContainer>
+
 
 		<UI>
 			{#snippet gameName()}

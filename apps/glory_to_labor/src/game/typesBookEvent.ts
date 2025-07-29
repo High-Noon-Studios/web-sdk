@@ -84,6 +84,18 @@ type BookEventNewStickySymbols = {
 	symbols: StickySymbolWin[];
 };
 
+type BookEventFlipWilds = {
+	index: number;
+	type: 'flipWilds';
+	symbols: StickySymbolWin[];
+};
+
+type BookEventIncreaseWildMult = {
+	index: number;
+	type: 'increaseWildMult';
+	symbols: StickySymbolWin[];
+};
+
 export type BookEvent =
 	| BookEventReveal
 	| BookEventWinInfo
@@ -96,7 +108,9 @@ export type BookEvent =
 	| BookEventFreeSpinEnd
 	| BookEventNewStickySymbols
 	// customised
-	| BookEventCreateBonusSnapshot;
+	| BookEventCreateBonusSnapshot
+	| BookEventFlipWilds
+	| BookEventIncreaseWildMult;
 
 export type Bet = BetType<BookEvent>;
 export type BookEventOfType<T> = Extract<BookEvent, { type: T }>;

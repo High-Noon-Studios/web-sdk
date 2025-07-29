@@ -23,7 +23,7 @@
 <SpineProvider
 	x={context.stateGameDerived.boardLayout().x - context.stateGameDerived.boardLayout().width * 0.75}
 	y={context.stateGameDerived.boardLayout().y + context.stateGameDerived.boardLayout().height * 0.5}
-	key="marx"
+	key="marxHero"
 	height={props.height}
 	filters={[blurFilter]}
 >

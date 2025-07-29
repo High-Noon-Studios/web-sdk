@@ -1,24 +1,23 @@
-import _ from 'lodash';
-import type { Tween } from 'svelte/motion';
-
-import { stateBet } from 'state-shared';
-import { createEnhanceBoard, createReelForSpinning } from 'utils-slots';
-import { createGetWinLevelDataByWinLevelAlias } from 'utils-shared/winLevel';
-
-import type { GameType, RawSymbol, SymbolState } from './types';
-import { stateLayoutDerived } from './stateLayout';
-import { winLevelMap } from './winLevelMap';
-import { eventEmitter } from './eventEmitter';
 import {
-	SYMBOL_SIZE,
+	BOARD_DIMENSIONS,
 	BOARD_SIZES,
 	INITIAL_BOARD,
-	BOARD_DIMENSIONS,
-	SPIN_OPTIONS_DEFAULT,
-	SPIN_OPTIONS_FAST,
 	INITIAL_SYMBOL_STATE,
 	SCATTER_LAND_SOUND_MAP,
+	SPIN_OPTIONS_DEFAULT,
+	SPIN_OPTIONS_FAST,
+	SYMBOL_SIZE,
 } from './constants';
+import type { GameType, RawSymbol, SymbolState } from './types';
+import { createEnhanceBoard, createReelForSpinning } from 'utils-slots';
+
+import type { Tween } from 'svelte/motion';
+import _ from 'lodash';
+import { createGetWinLevelDataByWinLevelAlias } from 'utils-shared/winLevel';
+import { eventEmitter } from './eventEmitter';
+import { stateBet } from 'state-shared';
+import { stateLayoutDerived } from './stateLayout';
+import { winLevelMap } from './winLevelMap';
 
 const onSymbolLand = ({ rawSymbol }: { rawSymbol: RawSymbol }) => {
 	if (rawSymbol.name === 'S') {
